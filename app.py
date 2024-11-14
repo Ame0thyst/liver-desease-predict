@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 
 # Memuat model dan scaler menggunakan pickle
-with open('/data/model/liver_model_smote.sav', 'rb') as model_file:
+with open('liver_model_smote.sav', 'rb') as model_file:
     model = pickle.load(model_file)
 
 with open('scaler.pkl', 'rb') as scaler_file:
