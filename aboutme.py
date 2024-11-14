@@ -13,7 +13,7 @@ def show_aboutme():
     st.image(new_image)
     st.markdown('''
         <p style="text-align: justify;">
-        Perkenalkan nama saya Novrianda, Saya merupakan Mahasiswa Program Studi  <a style="text-decoration:none" href="https://informatika.umri.ac.id/">Teknik Informatika</a>, <a style="text-decoration:none" href="https://umri.ac.id/"> Universitas Muhammdiyah Riau</a>. Aplikasi ini dibangun untuk tugas akhir skripsi sebagai syarat untuk kelulusan S1 Teknik Informatika. Dibangun menggunakan Algoritma Support Vector Machine (SVM) Sebagai model yang digunakan, lalu model di implementasikan ke framework streamlit untuk membangun aplikasi prediksi diabetes 
+        Perkenalkan nama saya Gilang Wicaksono, Saya merupakan Mahasiswa Program Studi  <a style="text-decoration:none" href="https://informatika.umri.ac.id/">Teknik Informatika</a>, <a style="text-decoration:none" href="https://umri.ac.id/"> Universitas Muhammdiyah Riau</a>. Aplikasi ini dibangun untuk tugas akhir skripsi sebagai syarat untuk kelulusan S1 Teknik Informatika. Dibangun menggunakan Algoritma Support Vector Machine (SVM) Sebagai model yang digunakan, lalu model di implementasikan ke framework streamlit untuk membangun aplikasi prediksi diabetes 
         </p>
     ''', unsafe_allow_html=True)
 

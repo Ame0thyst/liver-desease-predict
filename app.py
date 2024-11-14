@@ -1,63 +1,49 @@
 import streamlit as st
-from penyakit_diabetes import show_penyakit_diabetes
-from prediksi_diabetes import show_prediksi_diabetes
-from aboutme import show_aboutme
-from PIL import Image
-import base64
-from streamlit_option_menu import option_menu
+import numpy as np
+import pickle
 
-# Mendefinisikan path logo
-logo_path = "img/umri.png"  # Ganti dengan path logo yang sesuai
+# Memuat model dan scaler menggunakan pickle
+with open('/data/model/liver_model_smote.sav', 'rb') as model_file:
+    model = pickle.load(model_file)
 
-# Membaca logo sebagai base64
-with open(logo_path, "rb") as logo_file:
-    logo_data = base64.b64encode(logo_file.read()).decode("utf-8")
+with open('scaler.pkl', 'rb') as scaler_file:
+    scaler = pickle.load(scaler_file)
 
-# Main menu
-with st.sidebar:
-    selected = option_menu('Main Menu',
-    ['Penyakit Diabetes', 'Prediksi Diabetes', 'Aboutme'],
-    default_index=0)
+# Judul Aplikasi
+st.title("Liver Disease Prediction")
 
-if selected == "Penyakit Diabetes":
-    show_penyakit_diabetes()
-elif selected == "Prediksi Diabetes":
-    show_prediksi_diabetes()
-elif selected == "Aboutme":
-    show_aboutme()
+# Form untuk input pengguna
+st.header("Masukkan data pasien:")
+age_of_the_patient = st.number_input("Age of the Patient", min_value=1, max_value=100, value=30)
+gender_of_the_patient = st.selectbox("Gender of the Patient", ["Male", "Female"])
+total_bilirubin = st.number_input("Total Bilirubin", min_value=0.0, max_value=50.0, value=1.0)
+direct_bilirubin = st.number_input("Direct Bilirubin", min_value=0.0, max_value=50.0, value=0.1)
+alkphos_alkaline_phosphotase = st.number_input("Alkphos Alkaline Phosphotase", min_value=0, max_value=1000, value=100)
+sgpt_alamine_aminotransferase = st.number_input("SGPT Alamine Aminotransferase", min_value=0, max_value=1000, value=20)
+sgot_aspartate_aminotransferase = st.number_input("SGOT Aspartate Aminotransferase", min_value=0, max_value=1000, value=20)
+total_protiens = st.number_input("Total Proteins", min_value=0.0, max_value=10.0, value=6.5)
+alb_albumin = st.number_input("ALB Albumin", min_value=0.0, max_value=10.0, value=3.0)
+a_g_ratio_albumin_and_globulin_ratio = st.number_input("A/G Ratio Albumin and Globulin Ratio", min_value=0.0, max_value=10.0, value=1.0)
 
-# Menampilkan footer dengan logo
-st.markdown(
-    f"""
-    <style>
-    .footer {{
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        color: #white;
-        background-color: #F5F5F5;
-    }}
-    .footer-logo {{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }}
-    .footer-logo img {{
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
-        margin-right: 10px;
-    }}
-    </style>
-    <div class="footer">
-        <div class="footer-logo">
-            <img src="data:image/png;base64,{logo_data}" alt="Logo">
-            © 2023 Novrianda, Universitas Muhammadiyah Riau, Teknik Informatika.
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+# Konversi gender menjadi nilai numerik
+gender_numeric = 1 if gender_of_the_patient == "Male" else 0
+
+# Saat tombol 'Predict' diklik
+if st.button("Predict"):
+    # Membuat array input dari nilai yang dimasukkan pengguna
+    input_data = np.array([[age_of_the_patient, gender_numeric, total_bilirubin, direct_bilirubin, 
+                            alkphos_alkaline_phosphotase, sgpt_alamine_aminotransferase, 
+                            sgot_aspartate_aminotransferase, total_protiens, alb_albumin, 
+                            a_g_ratio_albumin_and_globulin_ratio]])
     
+    # Normalisasi input data menggunakan scaler yang sudah disimpan
+    input_data_scaled = scaler.transform(input_data)
+    
+    # Melakukan prediksi
+    prediction = model.predict(input_data_scaled)
+    
+    # Menampilkan hasil prediksi
+    if prediction[0] == 1:
+        st.success("Pasien terindikasi mengalami penyakit liver.")
+    else:
+        st.success("Pasien tidak terindikasi mengalami penyakit liver.")
