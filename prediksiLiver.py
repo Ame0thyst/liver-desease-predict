@@ -218,7 +218,7 @@ def show_prediksi_liver():
     # Memuat scaler dan model
     scaler = joblib.load("scaler.pkl")
     model = xgb.XGBClassifier()
-    model.load_model("best_model.json")
+    model.load_model("80_20_SMOTEXGBoost.json")
 
     # Transformasi data input
     X_input_scaled = scaler.transform(df_input)
