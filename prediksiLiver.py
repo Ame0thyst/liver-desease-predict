@@ -186,8 +186,6 @@ from sklearn.preprocessing import MinMaxScaler
 from datetime import datetime
 import os
 
-
-
 def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
     """
     Save input data and prediction to CSV file
