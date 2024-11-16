@@ -2,7 +2,7 @@ numpy==1.26.4
 pandas==2.2.2
 streamlit
 scikit-learn
-pip==24.2
+pip==24.3.1
 streamlit_option_menu
 plotly==3.9.0
 matplotlib==3.4.1
