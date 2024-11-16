@@ -33,7 +33,7 @@ def show_prediksi_liver():
         # Age = st.text_input('Input nilai Age')
 
     # Code for prediction
-    diab_diagnosis = ''
+    liver_diagnosis = ''
 
     # Make prediction button
     if st.button('Test Prediksi Liver'):
