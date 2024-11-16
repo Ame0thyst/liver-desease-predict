@@ -276,7 +276,7 @@ def show_prediksi_liver():
         # Save the data
         if save_to_csv(input_data[0], liver_prediction[0]):
             st.success(liver_diagnosis)
-            st.info("Data telah disimpan untuk pengembangan model di masa depan")
+            st.info("Data telah disimpan 🐥 terimakasih telah menggunakan layanan ini ")
         else:
             st.success(liver_diagnosis)
             st.error("Gagal menyimpan data")
