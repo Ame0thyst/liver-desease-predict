@@ -5,7 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 def show_prediksi_liver():
     # Load model
-    diabetes_model = pickle.load(open('ori_70_30_xgboost_model.pkl', 'rb'))
+    liver_model = pickle.load(open('ori_70_30_xgboost_model.pkl', 'rb'))
 
     # Load scaler
     scaler = pickle.load(open('scaler.pkl', 'rb'))
@@ -49,9 +49,9 @@ def show_prediksi_liver():
         # Normalize input data using the saved scaler object
         input_data_scaled = scaler.transform(input_data)
         # Perform prediction
-        diab_prediction = diabetes_model.predict(input_data_scaled)
+        liver_prediction = liver_model.predict(input_data_scaled)
 
-        if diab_prediction[0] == 1:
+        if liver_prediction[0] == 1:
             diab_diagnosis = 'Pasien terindikasi penyakit liver'
         else:
             diab_diagnosis = 'Pasien tidak terkena penyakit liver'
