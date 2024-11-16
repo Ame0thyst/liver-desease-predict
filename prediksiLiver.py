@@ -228,3 +228,5 @@ def show_prediksi_liver():
         y_pred = model.predict(X_input_scaled)
         st.write(f"Prediksi: {'Penyakit Liver' if y_pred[0] == 1 else 'Sehat'}")
 
+if __name__ == "__main__":
+   show_prediksi_liver()
