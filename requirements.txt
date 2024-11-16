@@ -1,11 +1,11 @@
-numpy==1.23.4
-pandas==1.5.1
+numpy==1.26.4
+pandas==2.2.2
 streamlit
 scikit-learn
-pip==22.2.2
+pip==24.2
 streamlit_option_menu
-plotly==4.14.3
+plotly==3.9.0
 matplotlib==3.4.1
-joblib==0.16.0
+joblib==1.4.2
 Pillow
 xgboost===2.1.0
