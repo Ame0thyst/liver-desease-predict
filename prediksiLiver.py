@@ -111,10 +111,10 @@ def show_prediksi_liver():
     col1, col2 = st.columns(2)
 
     with col1:
-        age_of_the_patient = st.number_input("Age of the Patient", min_value=1, max_value=100, value=30)
+        age_of_the_patient = st.number_input("Age of the Patient", min_value=1, max_value=500, value=30)
         gender_of_the_patient = st.selectbox("Gender of the Patient", ["Male", "Female"])
-        total_bilirubin = st.number_input("Total Bilirubin", min_value=0.0, max_value=50.0, value=1.0)
-        direct_bilirubin = st.number_input("Direct Bilirubin", min_value=0.0, max_value=50.0, value=0.1)
+        total_bilirubin = st.number_input("Total Bilirubin", min_value=0.0, max_value=500.0, value=1.0)
+        direct_bilirubin = st.number_input("Direct Bilirubin", min_value=0.0, max_value=500.0, value=0.1)
         alkphos_alkaline_phosphotase = st.number_input(
             "Alkphos Alkaline Phosphotase", min_value=0, max_value=1000, value=100
         )
@@ -123,9 +123,9 @@ def show_prediksi_liver():
         sgpt_alamine_aminotransferase = st.number_input("SGPT Alamine Aminotransferase", min_value=0, max_value=1000, value=20)
         sgot_aspartate_aminotransferase = st.number_input("SGOT Aspartate Aminotransferase", min_value=0, max_value=1000, value=20)
         total_protiens = st.number_input("Total Proteins", min_value=0.0, max_value=10.0, value=6.5)
-        alb_albumin = st.number_input("ALB Albumin", min_value=0.0, max_value=10.0, value=3.0)
+        alb_albumin = st.number_input("ALB Albumin", min_value=0.1, max_value=500.0, value=3.0)
         a_g_ratio_albumin_and_globulin_ratio = st.number_input(
-            "A/G Ratio Albumin and Globulin Ratio", min_value=0.0, max_value=10.0, value=1.0
+            "A/G Ratio Albumin and Globulin Ratio", min_value=0.1, max_value=500.0, value=1.0
         )
 
     # Convert gender to numeric (1 for Male, 0 for Female)
