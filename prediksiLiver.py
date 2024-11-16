@@ -5,7 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 def show_prediksi_liver():
     # Load model
-    diabetes_model = pickle.load(open('liver_model_smote.sav', 'rb'))
+    diabetes_model = pickle.load(open('liver_model_smote.pkl', 'rb'))
 
     # Load scaler
     scaler = pickle.load(open('scaler.pkl', 'rb'))
