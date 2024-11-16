@@ -1,6 +1,6 @@
 import streamlit as st
-from penyakit_diabetes import show_penyakit_diabetes
-from prediksi_diabetes import show_prediksi_diabetes
+from penyakitLiver import show_penyakit_diabetes
+from prediksiLiver import show_prediksi_diabetes
 from aboutme import show_aboutme
 from PIL import Image
 import base64
