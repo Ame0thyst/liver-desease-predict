@@ -4,8 +4,5 @@ streamlit
 scikit-learn
 pip==24.3.1
 streamlit_option_menu
-plotly==3.9.0
-matplotlib==3.4.1
-joblib==1.4.2
 Pillow
 xgboost===2.1.0
