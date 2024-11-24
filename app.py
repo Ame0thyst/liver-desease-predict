@@ -1,30 +1,28 @@
 import streamlit as st
 from page.aboutMe import show_aboutme
-from page.penyakitLiver import show_penyakit_diabetes
+from page.penyakitLiver import show_inform_liver
 from page.prediksiLiver import show_prediksi_liver, save_to_csv
-from PIL import Image
-import base64
 from streamlit_option_menu import option_menu
 
-# Mendefinisikan path logo
-logo_path = "img/umri.png"  # Ganti dengan path logo yang sesuai
-
-# Membaca logo sebagai base64
-with open(logo_path, "rb") as logo_file:
-    logo_data = base64.b64encode(logo_file.read()).decode("utf-8")
-
-# Main menu
+# Membuat Sidebar Menu
 with st.sidebar:
-    selected = option_menu('Main Menu',
-    ['Penyakit Liver', 'Prediksi Liver', 'Aboutme'],
-    default_index=0)
+    selected = option_menu(
+        menu_title="Main Menu",  # Judul menu
+        options=["About Me", "Informasi Liver", "Prediksi Penyakit Liver"],  # Pilihan menu
+        icons=["person", "info-circle", "activity"],  # Ikon (opsional)
+        menu_icon="cast",  # Ikon untuk menu utama (opsional)
+        default_index=0,  # Default pilihan menu
+    )
 
-if selected == "Penyakit Diabetes":
-    show_penyakit_diabetes()
-elif selected == "Prediksi Diabetes":
-    show_prediksi_liver(), save_to_csv()
-elif selected == "Aboutme":
-    show_aboutme()
+# Logika untuk Menampilkan Konten Berdasarkan Pilihan Menu
+if selected == "About Me":
+    show_aboutme()  # Panggil fungsi dari aboutMe.py
+elif selected == "Informasi Liver":
+    show_inform_liver()  # Panggil fungsi dari penyakitLiver.py
+elif selected == "Prediksi Penyakit Liver":
+    show_prediksi_liver()  # Panggil fungsi untuk prediksi
+    save_to_csv()  # Simpan data jika ada
+
 
 # Menampilkan footer dengan logo
 st.markdown(

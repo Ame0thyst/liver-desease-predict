@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image, ImageDraw, ImageOps
 
-image = Image.open('img/novri.png')
+image = Image.open('')
 
 def show_aboutme():
     # Deskripsi tentang diri
