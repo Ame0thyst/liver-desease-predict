@@ -97,11 +97,11 @@ def show_aboutme():
             <a style="text-decoration:none" href="https://informatika.umri.ac.id/">Teknik Informatika</a>, 
             <a style="text-decoration:none" href="https://umri.ac.id/"> Universitas Muhammdiyah Riau</a>. 
             Aplikasi ini dibangun untuk tugas akhir skripsi sebagai syarat untuk kelulusan S1 Teknik Informatika. Dibangun 
-            menggunakan Algoritma Extreme Gradient Boosting (XGBoost) Sebagai model yang digunakan, lalu model 
+            menggunakan Algoritma <a style="text-decoration:none" href="https://xgboost.readthedocs.io/en/stable/
+"> Extreme Gradient Boosting (XGBoost) </a> Sebagai model yang digunakan, lalu model 
             diimplementasikan ke framework streamlit untuk membangun aplikasi prediksi penyakit liver.
             </p>
         ''', unsafe_allow_html=True)
-
     # Dosen pembimbing
     st.markdown('<h3>Dosen Pembimbing</h3>', unsafe_allow_html=True)
 
