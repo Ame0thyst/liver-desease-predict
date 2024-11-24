@@ -65,15 +65,6 @@ def get_image_base64(image):
     img_str = base64.b64encode(buffered.getvalue()).decode()
     return img_str
 
-# Fungsi untuk membuat gambar berbentuk lingkaran
-# def make_circle(image):
-#     size = (min(image.size),) * 2
-#     mask = Image.new('L', size, 0)
-#     draw = ImageDraw.Draw(mask)
-#     draw.ellipse((0, 0) + size, fill=255)
-#     output = ImageOps.fit(image, size, centering=(0.5, 0.5))
-#     output.putalpha(mask)
-#     return output
 def make_circle(image, size=(100, 100)):
     mask = Image.new('L', size, 0)
     draw = ImageDraw.Draw(mask)
@@ -81,6 +72,7 @@ def make_circle(image, size=(100, 100)):
     output = ImageOps.fit(image, size, centering=(0.5, 0.5))
     output.putalpha(mask)
     return output
+
 # Memuat gambar dosen
 image_yulia = Image.open('img/DOSBING1.png')  # Gambar Yulia Fatma
 image_fitri = Image.open('img/DOSBING2.jpg')  # Gambar Fitri Handayani
@@ -91,7 +83,7 @@ image_ikoo = Image.open('img/ikoo.png')  # Gambar ikoo
 def show_aboutme():
     # Deskripsi tentang diri
     st.markdown('''
-    <h3>Tentang Saya</h3>
+    <h3 style="text-align: center;">Tentang Saya</h3>
     ''', unsafe_allow_html=True)
     
     col1, col2 = st.columns([1, 3])  # Rasio lebar kolom (1:3)
