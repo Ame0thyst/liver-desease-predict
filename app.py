@@ -3,6 +3,15 @@ from page.aboutMe import show_aboutme
 from page.penyakitLiver import show_inform_liver
 from page.prediksiLiver import show_prediksi_liver, save_to_csv
 from streamlit_option_menu import option_menu
+import base64
+from PIL import Image
+
+
+
+logo_path = "img/umri.png"  # Ganti dengan path logo yang sesuai
+
+with open(logo_path, "rb") as logo_file:
+    logo_data = base64.b64encode(logo_file.read()).decode("utf-8")
 
 # Membuat Sidebar Menu
 with st.sidebar:
