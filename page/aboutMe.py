@@ -76,7 +76,7 @@ def make_circle(image, size=(450, 450)):
 # Memuat gambar dosen
 image_yulia = Image.open('img/DOSBING1.png')  # Gambar Yulia Fatma
 image_fitri = Image.open('img/DOSBING2.jpg')  # Gambar Fitri Handayani
-image_ikoo = Image.open('img/ikoo.png')  # Gambar ikoo
+image_ikoo = Image.open('img/masiko.png')  # Gambar ikoo
 
 
 # Fungsi utama
