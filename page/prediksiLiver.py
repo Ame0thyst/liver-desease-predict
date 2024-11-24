@@ -241,11 +241,25 @@ def liver_prediction_system():
                 st.write("### Data yang Telah Terkumpul")
                 st.dataframe(collected_data)
                 
-                # Add basic statistics
+                # adding coloumn 
+                tot1, tot2, tot3 = st.columns(3)
                 st.write("### Statistik Data")
-                st.write(f"Total data terkumpul: {len(collected_data)}")
-                st.write(f"Jumlah kasus positif: {len(collected_data[collected_data['prediction'] == 1])}")
-                st.write(f"Jumlah kasus negatif: {len(collected_data[collected_data['prediction'] == 0])}")
+                with tot1:
+                    st.header("Total data terkumpul")
+                    st.write(f"Total data terkumpul: {len(collected_data)}")
+                with tot2:
+                    st.header("Total Kasus Positif")
+                    st.write(f"Jumlah kasus positif: {len(collected_data[collected_data['prediction'] == 1])}")
+                with tot3:
+                    st.header("Total Kasus Negatif")
+                    st.write(f"Jumlah kasus negatif: {len(collected_data[collected_data['prediction'] == 0])}")
+
+
+                # # Add basic statistics
+                # st.write("### Statistik Data")
+                # st.write(f"Total data terkumpul: {len(collected_data)}")
+                # st.write(f"Jumlah kasus positif: {len(collected_data[collected_data['prediction'] == 1])}")
+                # st.write(f"Jumlah kasus negatif: {len(collected_data[collected_data['prediction'] == 0])}")
             else:
                 st.info("Belum ada data yang terkumpul")
 
