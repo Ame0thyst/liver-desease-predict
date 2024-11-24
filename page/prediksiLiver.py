@@ -263,27 +263,27 @@ def liver_prediction_system():
         #     else:
         #         st.info("Belum ada data yang terkumpul")
         if st.checkbox("Tampilkan Data yang Terkumpul"):
-    if os.path.exists('new_patient_data.csv'):
-        collected_data = pd.read_csv('new_patient_data.csv')
-        st.write("### Data yang Telah Terkumpul")
-        st.dataframe(collected_data)
+            if os.path.exists('new_patient_data.csv'):
+            collected_data = pd.read_csv('new_patient_data.csv')
+            st.write("### Data yang Telah Terkumpul")
+            st.dataframe(collected_data)
 
-        # Tambahkan statistik dalam bentuk tabel
-        st.write("### Statistik Data")
-        total_data = len(collected_data)
-        positif_cases = len(collected_data[collected_data['prediction'] == 1])
-        negatif_cases = len(collected_data[collected_data['prediction'] == 0])
+            # Tambahkan statistik dalam bentuk tabel
+            st.write("### Statistik Data")
+            total_data = len(collected_data)
+            positif_cases = len(collected_data[collected_data['prediction'] == 1])
+            negatif_cases = len(collected_data[collected_data['prediction'] == 0])
 
-        # Buat DataFrame untuk tabel statistik
-        stats_table = pd.DataFrame({
-            "Keterangan": ["Total Data", "Jumlah Kasus Positif", "Jumlah Kasus Negatif"],
-            "Jumlah": [total_data, positif_cases, negatif_cases]
-        })
+            # Buat DataFrame untuk tabel statistik
+            stats_table = pd.DataFrame({
+                "Keterangan": ["Total Data", "Jumlah Kasus Positif", "Jumlah Kasus Negatif"],
+                "Jumlah": [total_data, positif_cases, negatif_cases]
+            })
 
-        # Tampilkan tabel
-        st.table(stats_table)
-    else:
-        st.info("Belum ada data yang terkumpul")
+            # Tampilkan tabel
+            st.table(stats_table)
+        else:
+            st.info("Belum ada data yang terkumpul")
 
 
     # Menjalankan fungsi show_prediksi_liver
