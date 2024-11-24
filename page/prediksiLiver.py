@@ -213,6 +213,7 @@ def liver_prediction_system():
 
             if liver_prediction[0] == 1:
                 liver_diagnosis = 'Pasien terindikasi penyakit liver'
+                 st.markdown(f"<h3 style='color:yellow;'>{liver_diagnosis}</h3>",
             else:
                 liver_diagnosis = 'Pasien tidak terkena penyakit liver'
                 
