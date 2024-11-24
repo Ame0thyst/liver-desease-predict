@@ -583,37 +583,13 @@ def liver_prediction_system():
                             
                             # List nearby hospitals
                             st.write("### Daftar Rumah Sakit Terdekat:")
-                            if hospitals:
-                                hospital_data = []
-                            for hospital in hospitals:
-                                hospital_name = hospital['name']
-                                hospital_data.append({
-                                    "Nama Rumah Sakit": hospital_name
-                                })
                             
-                            # Membuat DataFrame
-                            df = pd.DataFrame(hospital_data)
-                            
-                            # Menampilkan tabel nama rumah sakit
-                            st.table(df)
-                            
-                            # Menambahkan tombol untuk setiap rumah sakit
-                            for hospital in hospitals:
-                                hospital_name = hospital['name']
+                            for idx, hospital in enumerate(hospitals, 1):
+                                st.write(f"{idx}. {hospital['name']}")
                                 maps_url = f"https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
-                                
-                                # Menampilkan tombol untuk membuka rute
-                                if st.button(f"Lihat rute ke {hospital_name}"):
-                                    # Aksi untuk membuka URL
-                                    st.markdown(f'<a href="{maps_url}" target="_blank">Klik di sini untuk membuka rute ke {hospital_name}</a>', unsafe_allow_html=True)
+                                st.markdown(f"[Lihat rute ke {hospital['name']}]({maps_url})")
                         else:
                             st.error("Tidak dapat menemukan rumah sakit di sekitar lokasi Anda.")
-                        #     for idx, hospital in enumerate(hospitals, 1):
-                        #         st.write(f"{idx}. {hospital['name']}")
-                        #         maps_url = f"https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
-                        #         st.markdown(f"[Lihat rute ke {hospital['name']}]({maps_url})")
-                        # else:
-                        #     st.error("Tidak dapat menemukan rumah sakit di sekitar lokasi Anda.")
                     else:
                         st.error("Tidak dapat menemukan koordinat lokasi. Mohon periksa kembali alamat yang dimasukkan.")
                 else:
