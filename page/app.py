@@ -1,49 +1,69 @@
 import streamlit as st
-import numpy as np
-import pickle
+from page.aboutMe import show_aboutme
+from page.penyakitLiver import show_inform_liver
+from page.prediksiLiver import liver_prediction_system
+from streamlit_option_menu import option_menu
+import base64
+from PIL import Image
 
-# Memuat model dan scaler menggunakan pickle
-with open('liver_model_smote.sav', 'rb') as model_file:
-    model = pickle.load(model_file)
 
-with open('scaler.pkl', 'rb') as scaler_file:
-    scaler = pickle.load(scaler_file)
 
-# Judul Aplikasi
-st.title("Liver Disease Prediction")
+logo_path = "img/umri.png"  # Ganti dengan path logo yang sesuai
 
-# Form untuk input pengguna
-st.header("Masukkan data pasien:")
-age_of_the_patient = st.number_input("Age of the Patient", min_value=1, max_value=100, value=30)
-gender_of_the_patient = st.selectbox("Gender of the Patient", ["Male", "Female"])
-total_bilirubin = st.number_input("Total Bilirubin", min_value=0.0, max_value=50.0, value=1.0)
-direct_bilirubin = st.number_input("Direct Bilirubin", min_value=0.0, max_value=50.0, value=0.1)
-alkphos_alkaline_phosphotase = st.number_input("Alkphos Alkaline Phosphotase", min_value=0, max_value=1000, value=100)
-sgpt_alamine_aminotransferase = st.number_input("SGPT Alamine Aminotransferase", min_value=0, max_value=1000, value=20)
-sgot_aspartate_aminotransferase = st.number_input("SGOT Aspartate Aminotransferase", min_value=0, max_value=1000, value=20)
-total_protiens = st.number_input("Total Proteins", min_value=0.0, max_value=10.0, value=6.5)
-alb_albumin = st.number_input("ALB Albumin", min_value=0.0, max_value=10.0, value=3.0)
-a_g_ratio_albumin_and_globulin_ratio = st.number_input("A/G Ratio Albumin and Globulin Ratio", min_value=0.0, max_value=10.0, value=1.0)
+with open(logo_path, "rb") as logo_file:
+    logo_data = base64.b64encode(logo_file.read()).decode("utf-8")
 
-# Konversi gender menjadi nilai numerik
-gender_numeric = 1 if gender_of_the_patient == "Male" else 0
+# Membuat Sidebar Menu
+with st.sidebar:
+    selected = option_menu(
+        menu_title="Main Menu",  # Judul menu
+        options=["About Me", "Informasi Liver", "Prediksi Penyakit Liver"],  # Pilihan menu
+        icons=["person", "info-circle", "activity"],  # Ikon (opsional)
+        menu_icon="cast",  # Ikon untuk menu utama (opsional)
+        default_index=0,  # Default pilihan menu
+    )
 
-# Saat tombol 'Predict' diklik
-if st.button("Predict"):
-    # Membuat array input dari nilai yang dimasukkan pengguna
-    input_data = np.array([[age_of_the_patient, gender_numeric, total_bilirubin, direct_bilirubin, 
-                            alkphos_alkaline_phosphotase, sgpt_alamine_aminotransferase, 
-                            sgot_aspartate_aminotransferase, total_protiens, alb_albumin, 
-                            a_g_ratio_albumin_and_globulin_ratio]])
+# Logika untuk Menampilkan Konten Berdasarkan Pilihan Menu
+if selected == "About Me":
+    show_aboutme()  # Panggil fungsi dari aboutMe.py
+elif selected == "Informasi Liver":
+    show_inform_liver()  # Panggil fungsi dari penyakitLiver.py
+elif selected == "Prediksi Penyakit Liver":
+    liver_prediction_system()  # Simpan data jika ada
+
+
+# Menampilkan footer dengan logo
+st.markdown(
+    f"""
+    <style>
+    .footer {{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        color: #black;
+        background-color: #F5F5F5;
+    }}
+    .footer-logo {{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }}
+    .footer-logo img {{
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        margin-right: 10px;
+    }}
+    </style>
+    <div class="footer">
+        <div class="footer-logo">
+            <img src="data:image/png;base64,{logo_data}" alt="Logo">
+            © 2024 Gilang Wiko Wicaksono, Universitas Muhammadiyah Riau, Teknik Informatika.
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
     
-    # Normalisasi input data menggunakan scaler yang sudah disimpan
-    input_data_scaled = scaler.transform(input_data)
-    
-    # Melakukan prediksi
-    prediction = model.predict(input_data_scaled)
-    
-    # Menampilkan hasil prediksi
-    if prediction[0] == 1:
-        st.success("Pasien terindikasi mengalami penyakit liver.")
-    else:
-        st.success("Pasien tidak terindikasi mengalami penyakit liver.")

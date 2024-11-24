@@ -17,7 +17,7 @@ image13 = Image.open('img/gambar13.PNG')
 image14 = Image.open('img/gambar14.PNG') 
 
 
-def show_penyakit_diabetes():
+def show_inform_liver():
 
     st.markdown('''
     <header>
