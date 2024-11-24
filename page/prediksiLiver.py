@@ -584,18 +584,11 @@ def liver_prediction_system():
                             # List nearby hospitals
                             st.write("### Daftar Rumah Sakit Terdekat:")
                             if hospitals:
-                                # Membuat data untuk tabel
-                                hospital_data = [
-                                    {
-                                        "Nama Rumah Sakit": hospital['name'],
-                                        "Rute": f"[Lihat Rute](https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving)"
-                                    }
-                                    for hospital in hospitals
-                                ]
-
-                                # Menampilkan tabel
-                                df_hospitals = pd.DataFrame(hospital_data)
-                                st.table(df_hospitals)
+                                for idx, hospital in enumerate(hospitals, 1):
+                                    hospital_name = hospital['name']
+                                    maps_url = f"https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
+                                    # Tampilkan nama rumah sakit dan hyperlink rute
+                                    st.markdown(f"**{idx}. {hospital_name}** - [Lihat Rute]({maps_url})", unsafe_allow_html=True)
                             else:
                                 st.error("Tidak dapat menemukan rumah sakit di sekitar lokasi Anda.")
                         #     for idx, hospital in enumerate(hospitals, 1):
