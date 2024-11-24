@@ -583,8 +583,9 @@ def liver_prediction_system():
                             
                             # List nearby hospitals
                             st.write("### Daftar Rumah Sakit Terdekat:")
+                            hospitals_to_show = hospitals[:10]  ## 10 rumah sakit aja cukup kali ya
                             
-                            for idx, hospital in enumerate(hospitals, 1):
+                            for idx, hospital in enumerate(hospitals_to_show, 1):
                                 st.write(f"{idx}. {hospital['name']}")
                                 maps_url = f"https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
                                 st.markdown(f"[Lihat rute ke {hospital['name']}]({maps_url})")
