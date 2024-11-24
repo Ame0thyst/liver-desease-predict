@@ -58,7 +58,7 @@ from PIL import Image, ImageDraw, ImageOps
 
 # Fungsi untuk membuat gambar berbentuk lingkaran
 def make_circle(image):
-    size = (min(image.size),) * 2
+    size = (min(image.size),) * 1
     mask = Image.new('L', size, 0)
     draw = ImageDraw.Draw(mask)
     draw.ellipse((0, 0) + size, fill=255)
