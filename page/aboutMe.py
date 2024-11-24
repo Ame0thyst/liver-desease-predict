@@ -67,8 +67,10 @@ def make_circle(image):
     return output
 
 # Memuat gambar dosen
-image_yulia = Image.open('img/DOSBING1.PNG')  # Gambar Yulia Fatma
-image_fitri = Image.open('img/DOSBING2.JPG')  # Gambar Fitri Handayani
+image_yulia = Image.open('img/DOSBING1.png')  # Gambar Yulia Fatma
+image_fitri = Image.open('img/DOSBING2.jpg')  # Gambar Fitri Handayani
+image_ikoo = Image.open('img/ikoo.png')  # Gambar ikoo
+
 
 # Fungsi utama
 def show_aboutme():
@@ -79,7 +81,7 @@ def show_aboutme():
     
     col1, col2 = st.columns([1, 3])  # Rasio lebar kolom (1:3)
     with col1:
-        new_image = image.resize((250, 250))
+        new_image = image_ikoo.resize((250, 250))
         st.image(new_image)
     with col2:
         st.markdown('''
