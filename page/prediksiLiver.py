@@ -367,12 +367,11 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from datetime import datetime
 import os
-from datetime import datetime
 import pytz
 import folium
 from streamlit_folium import folium_static
 import requests
-from streamlit_js_eval import get_geolocation
+from geopy.geocoders import Nominatim
 
 def liver_prediction_system():
     def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
@@ -402,6 +401,20 @@ def liver_prediction_system():
             df_new.to_csv(filename, index=False)
         
         return True
+
+    def get_location_from_address(address):
+        """
+        Get coordinates from address using Nominatim
+        """
+        try:
+            geolocator = Nominatim(user_agent="liver_prediction_app")
+            location = geolocator.geocode(address)
+            if location:
+                return location.latitude, location.longitude
+            return None, None
+        except Exception as e:
+            st.error(f"Error getting coordinates: {str(e)}")
+            return None, None
 
     def get_nearby_hospitals(lat, lon):
         """
@@ -500,17 +513,32 @@ def liver_prediction_system():
             alb_albumin = st.number_input("ALB Albumin", min_value=0.0, max_value=500.0, value=3.0)
             a_g_ratio_albumin_and_globulin_ratio = st.number_input("A/G Ratio Albumin and Globulin Ratio", min_value=0.0, max_value=500.0, value=1.0)   
 
-        # Get user location using browser geolocation
-        loc_button = st.button("Dapatkan Lokasi Saya")
-        
-        if loc_button:
-            loc = get_geolocation()
-            if loc:
-                st.session_state['user_lat'] = loc['coords']['latitude']
-                st.session_state['user_lon'] = loc['coords']['longitude']
-                st.success("Lokasi berhasil didapatkan!")
-            else:
-                st.error("Tidak dapat mendapatkan lokasi. Pastikan Anda mengizinkan akses lokasi di browser.")
+        # Location input with dropdown for common cities
+        location_method = st.radio(
+            "Pilih metode input lokasi:",
+            ["Pilih Kota", "Input Alamat Manual"]
+        )
+
+        if location_method == "Pilih Kota":
+            # Daftar kota-kota besar di Indonesia
+            cities = {
+                "Jakarta": "Jakarta, Indonesia",
+                "Surabaya": "Surabaya, Jawa Timur, Indonesia",
+                "Bandung": "Bandung, Jawa Barat, Indonesia",
+                "Medan": "Medan, Sumatera Utara, Indonesia",
+                "Semarang": "Semarang, Jawa Tengah, Indonesia",
+                "Yogyakarta": "Yogyakarta, Indonesia",
+                "Malang": "Malang, Jawa Timur, Indonesia",
+                "Denpasar": "Denpasar, Bali, Indonesia"
+            }
+            selected_city = st.selectbox("Pilih kota terdekat:", list(cities.keys()))
+            if selected_city:
+                st.session_state['address'] = cities[selected_city]
+        else:
+            st.session_state['address'] = st.text_input(
+                "Masukkan alamat lengkap:",
+                help="Contoh: Jalan Sudirman No.1, Jakarta"
+            )
 
         gender_numeric = 1 if gender_of_the_patient == "Male" else 0
         liver_diagnosis = ''
@@ -537,29 +565,34 @@ def liver_prediction_system():
                 3. Jaga pola makan dan hindari minuman beralkohol
                 """)
                 
-                # Show nearby hospitals if location is available
-                if 'user_lat' in st.session_state and 'user_lon' in st.session_state:
+                # Get location and show nearby hospitals
+                if 'address' in st.session_state and st.session_state['address']:
                     st.info("Mencari rumah sakit terdekat dari lokasi Anda...")
-                    hospitals = get_nearby_hospitals(st.session_state['user_lat'], st.session_state['user_lon'])
+                    lat, lon = get_location_from_address(st.session_state['address'])
                     
-                    if hospitals:
-                        st.success(f"Ditemukan {len(hospitals)} rumah sakit di sekitar lokasi Anda")
+                    if lat and lon:
+                        hospitals = get_nearby_hospitals(lat, lon)
                         
-                        # Display the map
-                        st.write("### Peta Rumah Sakit Terdekat")
-                        map_data = show_hospital_map(st.session_state['user_lat'], st.session_state['user_lon'], hospitals)
-                        folium_static(map_data)
-                        
-                        # List nearby hospitals with distance calculation
-                        st.write("### Daftar Rumah Sakit Terdekat:")
-                        for idx, hospital in enumerate(hospitals, 1):
-                            st.write(f"{idx}. {hospital['name']}")
-                            maps_url = f"https://www.google.com/maps/dir/?api=1&origin={st.session_state['user_lat']},{st.session_state['user_lon']}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
-                            st.markdown(f"[Lihat rute ke {hospital['name']}]({maps_url})")
+                        if hospitals:
+                            st.success(f"Ditemukan {len(hospitals)} rumah sakit di sekitar lokasi Anda")
+                            
+                            # Display the map
+                            st.write("### Peta Rumah Sakit Terdekat")
+                            map_data = show_hospital_map(lat, lon, hospitals)
+                            folium_static(map_data)
+                            
+                            # List nearby hospitals
+                            st.write("### Daftar Rumah Sakit Terdekat:")
+                            for idx, hospital in enumerate(hospitals, 1):
+                                st.write(f"{idx}. {hospital['name']}")
+                                maps_url = f"https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
+                                st.markdown(f"[Lihat rute ke {hospital['name']}]({maps_url})")
+                        else:
+                            st.error("Tidak dapat menemukan rumah sakit di sekitar lokasi Anda.")
                     else:
-                        st.error("Tidak dapat menemukan rumah sakit di sekitar lokasi Anda.")
+                        st.error("Tidak dapat menemukan koordinat lokasi. Mohon periksa kembali alamat yang dimasukkan.")
                 else:
-                    st.warning("Silakan klik tombol 'Dapatkan Lokasi Saya' untuk melihat rumah sakit terdekat.")
+                    st.warning("Silakan masukkan lokasi Anda untuk melihat rumah sakit terdekat.")
                 
             else:
                 liver_diagnosis = 'Pasien tidak terkena penyakit liver'
