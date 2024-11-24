@@ -358,7 +358,7 @@
 #     liver_prediction_system()
 
 
-
+###DIBAWAH INI SCIPR SUDAH WORK DENGAN ALAMAT DAPAT DIPILIH MANUAL ATAU OTOMATIS
 
 import streamlit as st
 import pickle
@@ -583,12 +583,27 @@ def liver_prediction_system():
                             
                             # List nearby hospitals
                             st.write("### Daftar Rumah Sakit Terdekat:")
-                            for idx, hospital in enumerate(hospitals, 1):
-                                st.write(f"{idx}. {hospital['name']}")
-                                maps_url = f"https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
-                                st.markdown(f"[Lihat rute ke {hospital['name']}]({maps_url})")
-                        else:
-                            st.error("Tidak dapat menemukan rumah sakit di sekitar lokasi Anda.")
+                            if hospitals:
+                                # Membuat data untuk tabel
+                                hospital_data = [
+                                    {
+                                        "Nama Rumah Sakit": hospital['name'],
+                                        "Rute": f"[Lihat Rute](https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving)"
+                                    }
+                                    for hospital in hospitals
+                                ]
+
+                                # Menampilkan tabel
+                                df_hospitals = pd.DataFrame(hospital_data)
+                                st.table(df_hospitals)
+                            else:
+                                st.error("Tidak dapat menemukan rumah sakit di sekitar lokasi Anda.")
+                        #     for idx, hospital in enumerate(hospitals, 1):
+                        #         st.write(f"{idx}. {hospital['name']}")
+                        #         maps_url = f"https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
+                        #         st.markdown(f"[Lihat rute ke {hospital['name']}]({maps_url})")
+                        # else:
+                        #     st.error("Tidak dapat menemukan rumah sakit di sekitar lokasi Anda.")
                     else:
                         st.error("Tidak dapat menemukan koordinat lokasi. Mohon periksa kembali alamat yang dimasukkan.")
                 else:
@@ -627,3 +642,6 @@ def liver_prediction_system():
 
 if __name__ == "__main__":
     liver_prediction_system()
+
+
+
