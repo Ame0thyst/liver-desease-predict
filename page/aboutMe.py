@@ -57,15 +57,21 @@ import streamlit as st
 from PIL import Image, ImageDraw, ImageOps  
 
 # Fungsi untuk membuat gambar berbentuk lingkaran
-def make_circle(image):
-    size = (min(image.size),) * 1
+# def make_circle(image):
+#     size = (min(image.size),) * 2
+#     mask = Image.new('L', size, 0)
+#     draw = ImageDraw.Draw(mask)
+#     draw.ellipse((0, 0) + size, fill=255)
+#     output = ImageOps.fit(image, size, centering=(0.5, 0.5))
+#     output.putalpha(mask)
+#     return output
+def make_circle(image, size=(100, 100)):
     mask = Image.new('L', size, 0)
     draw = ImageDraw.Draw(mask)
     draw.ellipse((0, 0) + size, fill=255)
     output = ImageOps.fit(image, size, centering=(0.5, 0.5))
     output.putalpha(mask)
     return output
-
 # Memuat gambar dosen
 image_yulia = Image.open('img/DOSBING1.png')  # Gambar Yulia Fatma
 image_fitri = Image.open('img/DOSBING2.jpg')  # Gambar Fitri Handayani
