@@ -18,8 +18,8 @@ with open(logo_path, "rb") as logo_file:
 with st.sidebar:
     selected = option_menu(
         menu_title="Main Menu",  # Judul menu
-        options=["About Me", "Informasi Liver", "Prediksi Penyakit Liver"],  # Pilihan menu
-        icons=["person", "info-circle", "activity"],  # Ikon (opsional)
+        options=["About Me", "Informasi Liver", "Prediksi Penyakit Liver", "Dashboard"],  # Pilihan menu
+        icons=["person", "info-circle", "activity", "activity"],  # Ikon (opsional)
         menu_icon="cast",  # Ikon untuk menu utama (opsional)
         default_index=0,  # Default pilihan menu
     )
