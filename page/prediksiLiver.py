@@ -128,7 +128,22 @@ from sklearn.preprocessing import MinMaxScaler
 from datetime import datetime
 import os
 
+
 def liver_prediction_system():
+
+      st.markdown("""
+        <style>
+        .yellow-alert {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            margin: 1rem 0;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+      
     def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
         """
         Save input data and prediction to CSV file
@@ -213,6 +228,8 @@ def liver_prediction_system():
 
             if liver_prediction[0] == 1:
                 liver_diagnosis = 'Pasien terindikasi penyakit liver'
+                st.markdown(f'<div class="yellow-alert">{liver_diagnosis}</div>', unsafe_allow_html=True)
+
 
             else:
                 liver_diagnosis = 'Pasien tidak terkena penyakit liver'
