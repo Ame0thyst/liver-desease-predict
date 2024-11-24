@@ -109,7 +109,7 @@ def show_aboutme():
     with col3:
             st.markdown('''
             <div style="text-align: center;">
-                <img src="data:image/png;base64,{}" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;" alt="Yulia Fatma">
+                <img src="data:image/png;base64,{}" style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 10px;" alt="Yulia Fatma">
                 <p><strong>Yulia Fatma, S.Kom., M.Cs</strong></p>
                 <p>NIDN: 123456789</p>
             </div>
@@ -118,7 +118,7 @@ def show_aboutme():
     with col4:
         st.markdown('''
         <div style="text-align: center;">
-            <img src="data:image/png;base64,{}" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;" alt="Fitri Handayani">
+            <img src="data:image/png;base64,{}" style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 10px;" alt="Fitri Handayani">
             <p><strong>Fitri Handayani, S.T., M.Kom</strong></p>
             <p>NIDN: 987654321</p>
         </div>
