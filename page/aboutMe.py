@@ -106,25 +106,22 @@ def show_aboutme():
 
     col3, col4 = st.columns(2)  # Dua kolom untuk pembagian dosen
     with col3:
-        # Yulia Fatma
-        st.image(make_circle(image_yulia), use_column_width=False, width=150)
-        st.markdown('''
-        <div style="text-align: center;">
-            <p><strong>Yulia Fatma, S.Kom., M.Cs</strong></p>
-            <p>NIDN: 123456789</p>
-        </div>
-        ''', unsafe_allow_html=True)
+            st.markdown('''
+            <div style="text-align: center;">
+                <img src="data:image/png;base64,{}" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;" alt="Yulia Fatma">
+                <p><strong>Yulia Fatma, S.Kom., M.Cs</strong></p>
+                <p>NIDN: 123456789</p>
+            </div>
+            '''.format(get_image_base64(make_circle(image_yulia))), unsafe_allow_html=True)
 
     with col4:
-        # Fitri Handayani
-        st.image(make_circle(image_fitri), use_column_width=False, width=150)
         st.markdown('''
         <div style="text-align: center;">
+            <img src="data:image/png;base64,{}" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;" alt="Fitri Handayani">
             <p><strong>Fitri Handayani, S.T., M.Kom</strong></p>
             <p>NIDN: 987654321</p>
         </div>
-        ''', unsafe_allow_html=True)
-
+        '''.format(get_image_base64(make_circle(image_fitri))), unsafe_allow_html=True)
     # Deskripsi Tujuan 
     st.markdown('''
     <h3>Tujuan</h3>
