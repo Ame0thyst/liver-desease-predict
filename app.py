@@ -42,7 +42,7 @@ st.markdown(
         bottom: 0;
         width: 100%;
         text-align: center;
-        color: #white;
+        color: #black;
         background-color: #F5F5F5;
     }}
     .footer-logo {{
@@ -60,7 +60,7 @@ st.markdown(
     <div class="footer">
         <div class="footer-logo">
             <img src="data:image/png;base64,{logo_data}" alt="Logo">
-            © 2023 Novrianda, Universitas Muhammadiyah Riau, Teknik Informatika.
+            © 2024 Gilang Wiko Wicaksono, Universitas Muhammadiyah Riau, Teknik Informatika.
         </div>
     </div>
     """,
