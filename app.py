@@ -42,7 +42,7 @@ st.markdown(
         bottom: 0;
         width: 100%;
         text-align: center;
-        color: #black;
+        color: #020000;
         background-color: #F5F5F5;
     }}
     .footer-logo {{

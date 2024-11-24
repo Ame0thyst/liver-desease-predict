@@ -240,7 +240,7 @@ def liver_prediction_system():
                 collected_data = pd.read_csv('new_patient_data.csv')
                 st.write("### Data yang Telah Terkumpul")
                 st.dataframe(collected_data)
-                st.write("### Statistik Data")
+                st.write("### Rekapitulasi Data")
                 total_data = len(collected_data)
                 positif_cases = len(collected_data[collected_data['prediction'] == 1])
                 negatif_cases = len(collected_data[collected_data['prediction'] == 0])
