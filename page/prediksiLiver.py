@@ -243,17 +243,17 @@ def liver_prediction_system():
                 
                 # adding coloumn 
                 tot1, tot2, tot3 = st.columns(3)
-                st.write("### Statistik Data")
                 with tot1:
-                    st.header("Total data terkumpul")
+                    st.header("Total data")
                     st.write(f"Total data terkumpul: {len(collected_data)}")
                 with tot2:
-                    st.header("Total Kasus Positif")
+                    st.header("Kasus Positif")
                     st.write(f"Jumlah kasus positif: {len(collected_data[collected_data['prediction'] == 1])}")
                 with tot3:
-                    st.header("Total Kasus Negatif")
+                    st.header("Kasus Negatif")
                     st.write(f"Jumlah kasus negatif: {len(collected_data[collected_data['prediction'] == 0])}")
 
+                # st.write("### Statistik Data")
 
                 # # Add basic statistics
                 # st.write("### Statistik Data")
