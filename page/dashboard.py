@@ -18,15 +18,16 @@ def show_dashboard():
 
     # Dropdown untuk memilih atribut
     attributes = [
-        'age',
-        'total_bilirubin',
-        'direct_bilirubin',
-        'alkphos',
-        'sgpt',
-        'sgot',
-        'total_proteins',
-        'albumin',
-        'ag_ratio'
+        # 'age',
+        # 'total_bilirubin',
+        # 'direct_bilirubin',
+        # 'alkphos',
+        # 'sgpt',
+        # 'sgot',
+        # 'total_proteins',
+        # 'albumin',
+        # 'ag_ratio'
+        'age_of_the_patient','gender_of_the_patient','total_bilirubin','direct_bilirubin','alkphos_alkaline_phosphotase','sgpt_alamine_aminotransferase','sgot_aspartate_aminotransferase','total_protiens','alb_albumin','a_g_ratio_albumin_and_globulin_ratio','result'
     ]
 
     st.sidebar.header("Pengaturan Chart")
