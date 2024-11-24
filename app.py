@@ -4,7 +4,7 @@ from page.penyakitLiver import show_penyakit_diabetes
 from page.prediksiLiver import show_prediksi_liver, save_to_csv
 from PIL import Image
 import base64
-# from streamlit_option_menu import option_menu
+from streamlit_option_menu import option_menu
 
 # Mendefinisikan path logo
 logo_path = "img/umri.png"  # Ganti dengan path logo yang sesuai
