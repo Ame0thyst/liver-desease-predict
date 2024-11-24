@@ -235,56 +235,45 @@ def liver_prediction_system():
                 st.error("Gagal menyimpan data")
 
         # Add a section to display collected data
-        # if st.checkbox("Tampilkan Data yang Terkumpul"):
-        #     if os.path.exists('new_patient_data.csv'):
-        #         collected_data = pd.read_csv('new_patient_data.csv')
-        #         st.write("### Data yang Telah Terkumpul")
-        #         st.dataframe(collected_data)
-                
-        #         # adding coloumn 
-        #         tot1, tot2, tot3 = st.columns(3)
-        #         with tot1:
-        #             st.header("Total data")
-        #             st.write(f"Total data terkumpul: {len(collected_data)}")
-        #         with tot2:
-        #             st.header("Kasus Positif")
-        #             st.write(f"Jumlah kasus positif: {len(collected_data[collected_data['prediction'] == 1])}")
-        #         with tot3:
-        #             st.header("Kasus Negatif")
-        #             st.write(f"Jumlah kasus negatif: {len(collected_data[collected_data['prediction'] == 0])}")
-
-        #         # st.write("### Statistik Data")
-
-        #         # # Add basic statistics
-        #         # st.write("### Statistik Data")
-        #         # st.write(f"Total data terkumpul: {len(collected_data)}")
-        #         # st.write(f"Jumlah kasus positif: {len(collected_data[collected_data['prediction'] == 1])}")
-        #         # st.write(f"Jumlah kasus negatif: {len(collected_data[collected_data['prediction'] == 0])}")
-        #     else:
-        #         st.info("Belum ada data yang terkumpul")
         if st.checkbox("Tampilkan Data yang Terkumpul"):
             if os.path.exists('new_patient_data.csv'):
-            collected_data = pd.read_csv('new_patient_data.csv')
-            st.write("### Data yang Telah Terkumpul")
-            st.dataframe(collected_data)
+                collected_data = pd.read_csv('new_patient_data.csv')
+                st.write("### Data yang Telah Terkumpul")
+                st.dataframe(collected_data)
+                st.write("### Statistik Data")
+                total_data = len(collected_data)
+                positif_cases = len(collected_data[collected_data['prediction'] == 1])
+                negatif_cases = len(collected_data[collected_data['prediction'] == 0])
 
-            # Tambahkan statistik dalam bentuk tabel
-            st.write("### Statistik Data")
-            total_data = len(collected_data)
-            positif_cases = len(collected_data[collected_data['prediction'] == 1])
-            negatif_cases = len(collected_data[collected_data['prediction'] == 0])
+                # Buat DataFrame untuk tabel statistik
+                stats_table = pd.DataFrame({
+                    "Keterangan": ["Total Data", "Jumlah Kasus Positif", "Jumlah Kasus Negatif"],
+                    "Jumlah": [total_data, positif_cases, negatif_cases]
+                })
 
-            # Buat DataFrame untuk tabel statistik
-            stats_table = pd.DataFrame({
-                "Keterangan": ["Total Data", "Jumlah Kasus Positif", "Jumlah Kasus Negatif"],
-                "Jumlah": [total_data, positif_cases, negatif_cases]
-            })
+                # Tampilkan tabel
+                st.table(stats_table)
+                # adding coloumn 
+                # tot1, tot2, tot3 = st.columns(3)
+                # with tot1:
+                #     st.header("Total data")
+                #     st.write(f"Total data terkumpul: {len(collected_data)}")
+                # with tot2:
+                #     st.header("Kasus Positif")
+                #     st.write(f"Jumlah kasus positif: {len(collected_data[collected_data['prediction'] == 1])}")
+                # with tot3:
+                #     st.header("Kasus Negatif")
+                #     st.write(f"Jumlah kasus negatif: {len(collected_data[collected_data['prediction'] == 0])}")
 
-            # Tampilkan tabel
-            st.table(stats_table)
-        else:
-            st.info("Belum ada data yang terkumpul")
+                # st.write("### Statistik Data")
 
+                # # Add basic statistics
+                # st.write("### Statistik Data")
+                # st.write(f"Total data terkumpul: {len(collected_data)}")
+                # st.write(f"Jumlah kasus positif: {len(collected_data[collected_data['prediction'] == 1])}")
+                # st.write(f"Jumlah kasus negatif: {len(collected_data[collected_data['prediction'] == 0])}")
+            else:
+                st.info("Belum ada data yang terkumpul")
 
     # Menjalankan fungsi show_prediksi_liver
     show_prediksi_liver()
