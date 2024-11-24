@@ -595,7 +595,7 @@ def liver_prediction_system():
                                         })
                                     
                                     # Membuat DataFrame
-                                    df = pd.DataFrame(hospital_data)
+                                df = pd.DataFrame(hospital_data)
                                     
                                     # Menampilkan tabel
                                 st.table(df)
