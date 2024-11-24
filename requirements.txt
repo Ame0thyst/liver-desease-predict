@@ -10,3 +10,4 @@ folium
 streamlit-folium
 geopy
 requests
+streamlit-js-eval
