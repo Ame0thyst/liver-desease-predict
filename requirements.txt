@@ -6,3 +6,7 @@ pip==24.3.1
 streamlit_option_menu
 Pillow
 xgboost===2.1.0
+folium
+streamlit-folium
+geopy
+requests
