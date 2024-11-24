@@ -554,12 +554,12 @@ def liver_prediction_system():
             liver_prediction = liver_model.predict(input_data_scaled)
 
             if liver_prediction[0] == 1:
-                liver_diagnosis = 'Pasien terindikasi penyakit liver'
+                liver_diagnosis = '🚨 Pasien terindikasi penyakit liver'
                 st.warning(liver_diagnosis)
                 
                 # Show hospital recommendation
                 st.error("""
-                PERHATIAN: Berdasarkan hasil prediksi, Anda disarankan untuk:
+                📌PERHATIAN: Berdasarkan hasil prediksi, Anda disarankan untuk:
                 1. Segera melakukan pemeriksaan lebih lanjut ke rumah sakit terdekat
                 2. Konsultasikan hasil tes ini dengan dokter spesialis
                 3. Jaga pola makan dan hindari minuman beralkohol
@@ -567,14 +567,14 @@ def liver_prediction_system():
                 
                 # Get location and show nearby hospitals
                 if 'address' in st.session_state and st.session_state['address']:
-                    st.info("Mencari rumah sakit terdekat dari lokasi Anda...")
+                    st.info("🔎 Mencari rumah sakit terdekat dari lokasi Anda...")
                     lat, lon = get_location_from_address(st.session_state['address'])
                     
                     if lat and lon:
                         hospitals = get_nearby_hospitals(lat, lon)
                         
                         if hospitals:
-                            st.success(f"Ditemukan {len(hospitals)} rumah sakit di sekitar lokasi Anda")
+                            st.success(f"💡 Ditemukan {len(hospitals)} rumah sakit di sekitar lokasi Anda")
                             
                             # Display the map
                             st.write("### Peta Rumah Sakit Terdekat")
