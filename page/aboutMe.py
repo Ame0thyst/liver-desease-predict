@@ -13,7 +13,7 @@ def show_aboutme():
     st.image(new_image)
     st.markdown('''
         <p style="text-align: justify;">
-        Perkenalkan nama saya Novrianda, Saya merupakan Mahasiswa Program Studi  <a style="text-decoration:none" href="https://informatika.umri.ac.id/">Teknik Informatika</a>, <a style="text-decoration:none" href="https://umri.ac.id/"> Universitas Muhammdiyah Riau</a>. Aplikasi ini dibangun untuk tugas akhir skripsi sebagai syarat untuk kelulusan S1 Teknik Informatika. Dibangun menggunakan Algoritma Support Vector Machine (SVM) Sebagai model yang digunakan, lalu model di implementasikan ke framework streamlit untuk membangun aplikasi prediksi diabetes 
+        Perkenalkan nama saya Gilang Wiko Wicaksono, Saya merupakan Mahasiswa Program Studi  <a style="text-decoration:none" href="https://informatika.umri.ac.id/">Teknik Informatika</a>, <a style="text-decoration:none" href="https://umri.ac.id/"> Universitas Muhammdiyah Riau</a>. Aplikasi ini dibangun untuk tugas akhir skripsi sebagai syarat untuk kelulusan S1 Teknik Informatika. Dibangun menggunakan Algoritma Extreme Gradient Boosting (XGBoost) Sebagai model yang digunakan, lalu model di implementasikan ke framework streamlit untuk membangun aplikasi prediksi penyakit liver
         </p>
     ''', unsafe_allow_html=True)
 
@@ -21,8 +21,8 @@ def show_aboutme():
     st.markdown('''
         <h3>Dosen Pembimbing</h3>
         <ol style="text-align: justify;">
-            <li>Reny Medikawati Taufiq, S.Kom., M.T</li>
-            <li>Yulia Fatma, S.kom., M.cs</li>
+            <li>Yulia Fatma, S.kom., M.cs</
+            <li>Fitri Handayani, S.T., M.Kom</li>
         </ol>
     ''', unsafe_allow_html=True)
 
@@ -31,7 +31,7 @@ def show_aboutme():
     """
     <h3>Tujuan</h3>
     <p style="text-align: justify;">
-       Tujuan dari dibangunnya aplikasi ini adalah untuk membantu memprediksi apakah seseorang <span style='color:red'>Terkena Penyakit diabetes</span> atau <span style='color:green'>Tidak terkena diabetes</span>. Aplikasi menggunakan model machine learning yang telah dibangun dengan menggunakan algoritma Support Vector Machine untuk melakukan prediksi. Selain itu tujuan lainnya adalah untuk melakukan evaluasi kinerja model SVM dalam kasus Prediksi Diabetes.
+       Tujuan dari dibangunnya aplikasi ini adalah untuk membantu memprediksi apakah seseorang <span style='color:red'>Terkena Penyakit Liver</span> atau <span style='color:green'>Tidak terkena diabetes</span>. Aplikasi menggunakan model machine learning yang telah dibangun dengan menggunakan algoritma Extreme Gradient Boosting (XGBoost) untuk melakukan prediksi. Selain itu tujuan lainnya adalah untuk melakukan evaluasi kinerja model XGBOOST dalam kasus Prediksi Liver.
         
     </p>
     
