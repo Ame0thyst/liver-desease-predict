@@ -65,7 +65,7 @@ def get_image_base64(image):
     img_str = base64.b64encode(buffered.getvalue()).decode()
     return img_str
 
-def make_circle(image, size=(100, 100)):
+def make_circle(image, size=(150, 150)):
     mask = Image.new('L', size, 0)
     draw = ImageDraw.Draw(mask)
     draw.ellipse((0, 0) + size, fill=255)
@@ -83,7 +83,7 @@ image_ikoo = Image.open('img/ikoo.png')  # Gambar ikoo
 def show_aboutme():
     # Deskripsi tentang diri
     st.markdown('''
-    <h3 style="text-align: center;">Tentang Saya</h3>
+    <h3 style="text-align: center;">About Me</h3>
     ''', unsafe_allow_html=True)
     
     col1, col2 = st.columns([1, 3])  # Rasio lebar kolom (1:3)
