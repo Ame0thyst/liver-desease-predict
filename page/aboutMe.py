@@ -111,7 +111,7 @@ def show_aboutme():
             <div style="text-align: center;">
                 <img src="data:image/png;base64,{}" style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 10px;" alt="Yulia Fatma">
                 <p><strong>Yulia Fatma, S.Kom., M.Cs</strong></p>
-                <p>NIDN: 123456789</p>
+                <p>NIDN: 1018079001</p>
             </div>
             '''.format(get_image_base64(make_circle(image_yulia))), unsafe_allow_html=True)
 
@@ -120,7 +120,7 @@ def show_aboutme():
         <div style="text-align: center;">
             <img src="data:image/png;base64,{}" style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 10px;" alt="Fitri Handayani">
             <p><strong>Fitri Handayani, S.T., M.Kom</strong></p>
-            <p>NIDN: 987654321</p>
+            <p>NIDN: 1025109603</p>
         </div>
         '''.format(get_image_base64(make_circle(image_fitri))), unsafe_allow_html=True)
     # Deskripsi Tujuan 
