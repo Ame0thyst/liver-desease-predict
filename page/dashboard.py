@@ -8,7 +8,7 @@ def show_dashboard():
     st.write("Gunakan chart di bawah untuk eksplorasi data berdasarkan atribut yang tersedia.")
 
     # Load data
-    data_file = '../dataset/smote.csv'  # Pastikan file sudah ada
+    data_file = 'smote.csv'  # Pastikan file sudah ada
     if not data_file or not st.file_uploader:
         st.warning("Tidak ada data untuk ditampilkan. Pastikan dataset tersedia.")
         return
