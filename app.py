@@ -60,7 +60,7 @@ st.markdown(
     <div class="footer">
         <div class="footer-logo">
             <img src="data:image/png;base64,{logo_data}" alt="Logo">
-            © 2024 Gilang Wiko Wicaksono, Universitas Muhammadiyah Riau, Teknik Informatika.
+             Gilang Wiko Wicaksono ||  Universitas Muhammadiyah Riau || Teknik Informatika.
         </div>
     </div>
     """,
