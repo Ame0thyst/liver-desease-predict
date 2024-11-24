@@ -143,7 +143,7 @@ def liver_prediction_system():
         """
         # Convert input data to dictionary
         data_dict = {
-            'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'timestamp': datetime.now(pytz.timezone('Asia/Jakarta')).strftime("%Y-%m-%d %H:%M:%S"),
             'age': input_data[0],
             'gender': 'Male' if input_data[1] == 1 else 'Female',
             'total_bilirubin': input_data[2],
