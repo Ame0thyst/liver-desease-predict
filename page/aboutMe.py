@@ -55,6 +55,15 @@
 
 import streamlit as st
 from PIL import Image, ImageDraw, ImageOps  
+import base64
+from io import BytesIO
+
+# Fungsi untuk mengubah gambar menjadi Base64 (untuk embedding di HTML)
+def get_image_base64(image):
+    buffered = BytesIO()
+    image.save(buffered, format="PNG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    return img_str
 
 # Fungsi untuk membuat gambar berbentuk lingkaran
 # def make_circle(image):
