@@ -65,7 +65,7 @@ def get_image_base64(image):
     img_str = base64.b64encode(buffered.getvalue()).decode()
     return img_str
 
-def make_circle(image, size=(150, 150)):
+def make_circle(image, size=(350, 350)):
     mask = Image.new('L', size, 0)
     draw = ImageDraw.Draw(mask)
     draw.ellipse((0, 0) + size, fill=255)
