@@ -2,6 +2,7 @@ import streamlit as st
 from page.aboutMe import show_aboutme
 from page.penyakitLiver import show_inform_liver
 from page.prediksiLiver import liver_prediction_system
+from page.dashboard import show_dashboard
 from streamlit_option_menu import option_menu
 import base64
 from PIL import Image
@@ -30,6 +31,8 @@ elif selected == "Informasi Liver":
     show_inform_liver()  # Panggil fungsi dari penyakitLiver.py
 elif selected == "Prediksi Penyakit Liver":
     liver_prediction_system()  # Simpan data jika ada
+elif selected == "Dashboard":
+    show_dashboard()  # Simpan data jika ada
 
 
 # Menampilkan footer dengan logo
