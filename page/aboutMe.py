@@ -54,7 +54,7 @@
 
 
 import streamlit as st
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps  
 
 # Fungsi untuk membuat gambar berbentuk lingkaran
 def make_circle(image):
