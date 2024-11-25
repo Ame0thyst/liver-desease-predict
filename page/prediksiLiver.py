@@ -529,7 +529,8 @@ def liver_prediction_system():
                 "Semarang": "Semarang, Jawa Tengah, Indonesia",
                 "Yogyakarta": "Yogyakarta, Indonesia",
                 "Malang": "Malang, Jawa Timur, Indonesia",
-                "Denpasar": "Denpasar, Bali, Indonesia"
+                "Denpasar": "Denpasar, Bali, Indonesia",
+                "Pekanbaru": "Pekanbaru, Riau, Indonesia"
             }
             selected_city = st.selectbox("Pilih kota terdekat:", list(cities.keys()))
             if selected_city:
