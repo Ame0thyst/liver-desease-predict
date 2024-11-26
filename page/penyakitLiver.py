@@ -30,12 +30,8 @@ def show_inform_liver():
    <h2>Definisi Kasus</h2>
         <p style="text-align: justify;">lorem dlu
         </p>
-        <p  style="text-align: justify;"><span style="font-weight: bold;">Diabetes Melitus tipe 1. </span>Diabetes yang disebabkan kenaikan kadar gula
-            darah
-            karena kerusakan sel beta
-            pankreas sehingga produksi insulin tidak ada sama sekali. Insulin adalah hormon yang dihasilkan oleh
-            pancreas untuk mencerna gula dalam darah. Penderita diabetes tipe ini membutuhkan asupan insulin dari luar
-            tubuhnya.</p>
+        <p  style="text-align: justify;"><span style="font-weight: bold;">lorem. </span>lorem
+            .</p>
     ''', unsafe_allow_html=True)
 
     st.image(image3)
