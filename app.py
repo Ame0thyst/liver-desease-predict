@@ -18,8 +18,8 @@ with open(logo_path, "rb") as logo_file:
 with st.sidebar:
     selected = option_menu(
         menu_title="Main Menu",  # Judul menu
-        options=["About Me", "Informasi Liver", "Prediksi Penyakit Liver", "Dashboard ( beta )"],  # Pilihan menu
-        icons=["person", "info-circle", "activity", "activity"],  # Ikon (opsional)
+        options=["About Me", "Informasi Liver", "Prediksi Penyakit Liver"],  # Pilihan menu
+        icons=["person", "info-circle", "activity"],  # Ikon (opsional)
         menu_icon="cast",  # Ikon untuk menu utama (opsional)
         default_index=0,  # Default pilihan menu
     )
@@ -31,8 +31,10 @@ elif selected == "Informasi Liver":
     show_inform_liver()  # Panggil fungsi dari penyakitLiver.py
 elif selected == "Prediksi Penyakit Liver":
     liver_prediction_system()  # Simpan data jika ada
-elif selected == "Dashboard ( beta )":
-    show_dashboard()  # Simpan data jika ada
+
+    ##dashboard nya masi beta, jadi di hide dlu
+# elif selected == "Dashboard ( beta )":
+#     show_dashboard()  # Simpan data jika ada
 
 
 # Menampilkan footer dengan logo
