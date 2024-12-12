@@ -132,7 +132,7 @@ def liver_prediction_system():
     def show_prediksi_liver():
         # Load model
         # liver_model = pickle.load(open('ori_70_30_xgboost_model.pkl', 'rb'))
-        liver_model = pickle.load(open('liver_model_smote.sav', 'rb'))
+        liver_model = pickle.load(open('#', 'rb'))
         scaler = pickle.load(open('scalernew.pkl', 'rb'))
 
         st.markdown("<div class='judul'><h1 style='text-align: center;'>Aplikasi Prediksi Penyakit Liver</h1></div>", unsafe_allow_html=True)
