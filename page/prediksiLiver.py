@@ -265,11 +265,10 @@ def liver_prediction_system():
             else:
                 st.info("Belum ada data yang terkumpul")
 
-    # show_prediksi_liver()
+    show_prediksi_liver()
 
 if __name__ == "__main__":
-    # liver_prediction_system()
-     show_prediksi_liver()
+    liver_prediction_system()
 
 
 
