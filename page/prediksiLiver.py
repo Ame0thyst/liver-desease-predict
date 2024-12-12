@@ -210,10 +210,10 @@ def liver_prediction_system():
                 liver_prediction = liver_model.predict(input_data_scaled)
                 prediction_proba = liver_model.predict_proba(input_data_scaled)
 
-                if liver_prediction[0] == 1:
+                if liver_prediction[0] == 0:
                     liver_diagnosis = '🚨 Pasien terindikasi penyakit liver'
                     st.warning(liver_diagnosis)
-                    st.write(f"Probabilitas: {prediction_proba[0][1]:.2%}")
+                    st.write(f"Probabilitas: {prediction_proba[0][0]:.2%}")
                     
                     # Show hospital recommendation
                     st.error("""
@@ -257,7 +257,7 @@ def liver_prediction_system():
                 else:
                     liver_diagnosis = 'Pasien tidak terkena penyakit liver'
                     st.success(liver_diagnosis)
-                    st.write(f"Probabilitas: {prediction_proba[0][0]:.2%}")
+                    st.write(f"Probabilitas: {prediction_proba[0][1]:.2%}")
                     
                 if save_to_csv(input_dict, liver_prediction[0]):
                     st.info("Data telah disimpan 🐥 terimakasih telah menggunakan layanan ini")
