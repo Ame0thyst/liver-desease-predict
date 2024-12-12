@@ -11,5 +11,3 @@ streamlit-folium
 geopy
 requests
 streamlit-js-eval
-geopandas==1.0.1
-sklearn-pandas==2.2.0
