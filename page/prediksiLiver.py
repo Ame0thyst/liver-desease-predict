@@ -127,7 +127,7 @@ def liver_prediction_system():
         """
         # Load model dari JSON
         liver_model = xgb.XGBClassifier()
-        liver_model.load_model('xgboost_model.json')
+        liver_model.load_model('xgboost_model_smote.json')
         
         # Load feature names
         with open('feature_names.json', 'r') as f:
