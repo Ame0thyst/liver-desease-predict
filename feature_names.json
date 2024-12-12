@@ -1,0 +1,14 @@
+{
+    "feature_names": [
+        "age_of_the_patient",
+        "gender_of_the_patient",
+        "total_bilirubin",
+        "direct_bilirubin",
+        "alkphos_alkaline_phosphotase",
+        "sgpt_alamine_aminotransferase",
+        "sgot_aspartate_aminotransferase",
+        "total_protiens",
+        "alb_albumin",
+        "a_g_ratio_albumin_and_globulin_ratio"
+    ]
+}
