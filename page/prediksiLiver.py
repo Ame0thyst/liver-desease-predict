@@ -54,7 +54,7 @@ def get_location_from_address(address):
             return None, None
 
     # Fungsi get_nearby_hospitals tetap sama
-def get_nearby_hospitals(lat, lon):
+# def get_nearby_hospitals(lat, lon):
         try:
             overpass_url = "http://overpass-api.de/api/interpreter"
             overpass_query = f"""
@@ -94,16 +94,109 @@ def get_nearby_hospitals(lat, lon):
             return []
 
     # Fungsi show_hospital_map tetap sama
+def calculate_distance(lat1, lon1, lat2, lon2):
+    """
+    Calculate the distance between two points using the Haversine formula
+    """
+    R = 6371  # Radius of Earth in kilometers
+
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+    
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1-a))
+    distance = R * c
+    
+    return distance
+def get_nearby_hospitals(lat, lon):
+    try:
+        overpass_url = "http://overpass-api.de/api/interpreter"
+        # Query hanya untuk rumah sakit
+        overpass_query = f"""
+        [out:json];
+        (
+          node["amenity"="hospital"](around:5000,{lat},{lon});
+          way["amenity"="hospital"](around:5000,{lat},{lon});
+          relation["amenity"="hospital"](around:5000,{lat},{lon});
+        );
+        out center;
+        """
+        
+        response = requests.get(overpass_url, params={'data': overpass_query})
+        data = response.json()
+        
+        hospitals = []
+        for element in data['elements']:
+            if 'tags' in element:
+                name = element['tags'].get('name', 'Unknown Hospital')
+                if 'center' in element:
+                    hosp_lat = element['center']['lat']
+                    hosp_lon = element['center']['lon']
+                else:
+                    hosp_lat = element.get('lat')
+                    hosp_lon = element.get('lon')
+                
+                if hosp_lat and hosp_lon:
+                    # Calculate distance from user location
+                    distance = calculate_distance(lat, lon, hosp_lat, hosp_lon)
+                    
+                    hospitals.append({
+                        'name': name,
+                        'latitude': hosp_lat,
+                        'longitude': hosp_lon,
+                        'distance': distance  # Distance in kilometers
+                    })
+        
+        # Sort hospitals by distance
+        hospitals.sort(key=lambda x: x['distance'])
+        
+        return hospitals
+    except Exception as e:
+        st.error(f"Error getting hospital data: {str(e)}")
+        return []
+    
 def show_hospital_map(user_lat, user_lon, hospitals):
-        m = folium.Map(location=[user_lat, user_lon], zoom_start=13)
+    m = folium.Map(location=[user_lat, user_lon], zoom_start=13)
+    
+    # Add user location marker
+    folium.Marker(
+        [user_lat, user_lon],
+        popup="Lokasi Anda",
+        icon=folium.Icon(color='red', icon='info-sign')
+    ).add_to(m)
+    
+    # Add hospital markers with distance information
+    for idx, hospital in enumerate(hospitals[:10], 1):  # Only show top 10 closest
+        popup_text = f"{idx}. {hospital['name']}<br>Jarak: {hospital['distance']:.2f} km"
         
         folium.Marker(
+            [hospital['latitude'], hospital['longitude']],
+            popup=popup_text,
+            icon=folium.Icon(color='green', icon='plus', prefix='fa')
+        ).add_to(m)
+        
+        # Draw line to hospital
+        folium.PolyLine(
+            locations=[[user_lat, user_lon], [hospital['latitude'], hospital['longitude']]],
+            weight=2,
+            color='blue',
+            opacity=0.8,
+            popup=f"Jarak: {hospital['distance']:.2f} km"
+        ).add_to(m)
+    
+    return m
+# def show_hospital_map(user_lat, user_lon, hospitals):
+    m = folium.Map(location=[user_lat, user_lon], zoom_start=13)
+        
+    folium.Marker(
             [user_lat, user_lon],
             popup="Lokasi Anda",
             icon=folium.Icon(color='red', icon='info-sign')
         ).add_to(m)
         
-        for hospital in hospitals:
+    for hospital in hospitals:
             folium.Marker(
                 [hospital['latitude'], hospital['longitude']],
                 popup=hospital['name'],
@@ -117,7 +210,7 @@ def show_hospital_map(user_lat, user_lon, hospitals):
                 opacity=0.8
             ).add_to(m)
         
-        return m
+    return m
 
         
 
@@ -242,11 +335,16 @@ def liver_prediction_system():
                                 # List nearby hospitals
                                 st.write("### Daftar Rumah Sakit Terdekat:")
                                 hospitals_to_show = hospitals[:10]
-                                
+
                                 for idx, hospital in enumerate(hospitals_to_show, 1):
-                                    st.write(f"{idx}. {hospital['name']}")
+                                    st.write(f"{idx}. {hospital['name']} (Jarak: {hospital['distance']:.2f} km)")
                                     maps_url = f"https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
                                     st.markdown(f"[Lihat rute ke {hospital['name']}]({maps_url})")
+                                
+                                # for idx, hospital in enumerate(hospitals_to_show, 1):
+                                #     st.write(f"{idx}. {hospital['name']}")
+                                #     maps_url = f"https://www.google.com/maps/dir/?api=1&origin={lat},{lon}&destination={hospital['latitude']},{hospital['longitude']}&travelmode=driving"
+                                #     st.markdown(f"[Lihat rute ke {hospital['name']}]({maps_url})")
                             else:
                                 st.error("Tidak dapat menemukan rumah sakit di sekitar lokasi Anda.")
                         else:
@@ -272,8 +370,8 @@ def liver_prediction_system():
                     st.dataframe(collected_data)
                     st.write("### Rekapitulasi Data")
                     total_data = len(collected_data)
-                    positif_cases = len(collected_data[collected_data['prediction'] == 1])
-                    negatif_cases = len(collected_data[collected_data['prediction'] == 0])
+                    positif_cases = len(collected_data[collected_data['prediction'] == 0])
+                    negatif_cases = len(collected_data[collected_data['prediction'] == 1])
 
                     stats_table = pd.DataFrame({
                         "Keterangan": ["Total Data", "Jumlah Kasus Positif", "Jumlah Kasus Negatif"],
