@@ -12,7 +12,7 @@ import requests
 from geopy.geocoders import Nominatim
 import xgboost as xgb
 import json
-
+from math import radians, sin, cos, sqrt, atan2
 def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
         """
         Save input data and prediction to CSV file
