@@ -13,7 +13,7 @@ from geopy.geocoders import Nominatim
 import xgboost as xgb
 import json
 
-    def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
+def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
         """
         Save input data and prediction to CSV file
         """
@@ -42,7 +42,7 @@ import json
         return True
 
     # Fungsi get_location_from_address tetap sama
-    def get_location_from_address(address):
+def get_location_from_address(address):
         try:
             geolocator = Nominatim(user_agent="liver_prediction_app")
             location = geolocator.geocode(address)
@@ -54,7 +54,7 @@ import json
             return None, None
 
     # Fungsi get_nearby_hospitals tetap sama
-    def get_nearby_hospitals(lat, lon):
+def get_nearby_hospitals(lat, lon):
         try:
             overpass_url = "http://overpass-api.de/api/interpreter"
             overpass_query = f"""
@@ -94,7 +94,7 @@ import json
             return []
 
     # Fungsi show_hospital_map tetap sama
-    def show_hospital_map(user_lat, user_lon, hospitals):
+def show_hospital_map(user_lat, user_lon, hospitals):
         m = folium.Map(location=[user_lat, user_lon], zoom_start=13)
         
         folium.Marker(
@@ -121,7 +121,7 @@ import json
 
         
 
-    def liver_prediction_system():
+def liver_prediction_system():
         """
         Main function untuk sistem prediksi liver
         """
@@ -283,7 +283,6 @@ import json
                     st.table(stats_table)
                 else:
                     st.info("Belum ada data yang terkumpul")
-
 
 if __name__ == "__main__":
     liver_prediction_system()
