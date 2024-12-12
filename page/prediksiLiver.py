@@ -113,7 +113,6 @@ def calculate_distance(lat1, lon1, lat2, lon2):
 def get_nearby_hospitals(lat, lon):
     try:
         overpass_url = "http://overpass-api.de/api/interpreter"
-        # Query hanya untuk rumah sakit
         overpass_query = f"""
         [out:json];
         (
@@ -146,7 +145,7 @@ def get_nearby_hospitals(lat, lon):
                         'name': name,
                         'latitude': hosp_lat,
                         'longitude': hosp_lon,
-                        'distance': distance  # Distance in kilometers
+                        'distance': distance
                     })
         
         # Sort hospitals by distance
