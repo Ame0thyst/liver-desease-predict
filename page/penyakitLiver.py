@@ -14,13 +14,12 @@ def show_inform_liver():
         <h1 style='text-align: center;'>Penyakit Liver / Hepatitis</h1>
     </header>
     <section>
-        <h3>kasus global hepatitis</h3>
-        <p style='text-align: justify;'>lorem dlu aja ya</p>
+        <h3>Apa itu penyakit hepatitis? </h3>
+        <p style='text-align: justify;'>Penyakit Hepatitis
+Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, konsumsi alkohol berlebihan, atau penyakit autoimun. Terdapat beberapa jenis virus hepatitis, yaitu A, B, C, D, dan E. Hepatitis B dan C adalah yang paling umum dan dapat menyebabkan penyakit hati kronis</p>
     </section>
 ''', unsafe_allow_html=True)
-    st.image(image)
-
-    st.image(image2)
+   
 
     st.markdown('''
      <p style="text-align: justify;">lorem dlu aja ya</p>
@@ -33,7 +32,8 @@ def show_inform_liver():
         <p  style="text-align: justify;"><span style="font-weight: bold;">lorem. </span>lorem
             .</p>
     ''', unsafe_allow_html=True)
-
+    st.image(image)
+    st.image(image2)
     st.image(image3)
 
     # st.markdown('''
