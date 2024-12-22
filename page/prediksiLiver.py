@@ -13,34 +13,37 @@ from geopy.geocoders import Nominatim
 import xgboost as xgb
 import json
 from math import radians, sin, cos, sqrt, atan2
-def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
-        """
-        Save input data and prediction to CSV file
-        """
-        data_dict = {
-            'timestamp': datetime.now(pytz.timezone('Asia/Jakarta')).strftime("%Y-%m-%d %H:%M:%S"),
-            'age': input_data['age_of_the_patient'],
-            'gender': 'Male' if input_data['gender_of_the_patient'] == 1 else 'Female',
-            'total_bilirubin': input_data['total_bilirubin'],
-            'direct_bilirubin': input_data['direct_bilirubin'],
-            'alkphos': input_data['alkphos_alkaline_phosphotase'],
-            'sgpt': input_data['sgpt_alamine_aminotransferase'],
-            'sgot': input_data['sgot_aspartate_aminotransferase'],
-            'total_proteins': input_data['total_protiens'],
-            'albumin': input_data['alb_albumin'],
-            'ag_ratio': input_data['a_g_ratio_albumin_and_globulin_ratio'],
-            'prediction': prediction
-        }
-        
-        df_new = pd.DataFrame([data_dict])
-        
-        if os.path.exists(filename):
-            df_new.to_csv(filename, mode='a', header=False, index=False)
-        else:
-            df_new.to_csv(filename, index=False)
-        
-        return True
 
+##TODO:  AKTIFKAN DEFINISI DIBAWAH INI JIKA INGIN MENAMPILKAN FITUR TO CSV
+
+# def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
+#         """
+#         Save input data and prediction to CSV file
+#         """
+#         data_dict = {
+#             'timestamp': datetime.now(pytz.timezone('Asia/Jakarta')).strftime("%Y-%m-%d %H:%M:%S"),
+#             'age': input_data['age_of_the_patient'],
+#             'gender': 'Male' if input_data['gender_of_the_patient'] == 1 else 'Female',
+#             'total_bilirubin': input_data['total_bilirubin'],
+#             'direct_bilirubin': input_data['direct_bilirubin'],
+#             'alkphos': input_data['alkphos_alkaline_phosphotase'],
+#             'sgpt': input_data['sgpt_alamine_aminotransferase'],
+#             'sgot': input_data['sgot_aspartate_aminotransferase'],
+#             'total_proteins': input_data['total_protiens'],
+#             'albumin': input_data['alb_albumin'],
+#             'ag_ratio': input_data['a_g_ratio_albumin_and_globulin_ratio'],
+#             'prediction': prediction
+#         }
+        
+#         df_new = pd.DataFrame([data_dict])
+        
+#         if os.path.exists(filename):
+#             df_new.to_csv(filename, mode='a', header=False, index=False)
+#         else:
+#             df_new.to_csv(filename, index=False)
+        
+#         return True
+##TODO:  INI AKHIR DARI DEFINISI DARI CONVERT INPUT BARU KE CSV
     # Fungsi get_location_from_address tetap sama
 def get_location_from_address(address):
         try:
@@ -355,31 +358,35 @@ def liver_prediction_system():
                     liver_diagnosis = 'Pasien tidak terkena penyakit liver'
                     st.success(liver_diagnosis)
                     st.write(f"Probabilitas: {prediction_proba[0][1]:.2%}")
-                    
-                if save_to_csv(input_dict, liver_prediction[0]):
-                    st.info("Data telah disimpan 🐥 terimakasih telah menggunakan layanan ini")
-                else:
-                    st.error("Gagal menyimpan data")
 
-            # Display collected data section
-        if st.checkbox("Tampilkan Data yang Terkumpul"):
-                if os.path.exists('new_patient_data.csv'):
-                    collected_data = pd.read_csv('new_patient_data.csv')
-                    st.write("### Data yang Telah Terkumpul")
-                    st.dataframe(collected_data)
-                    st.write("### Rekapitulasi Data")
-                    total_data = len(collected_data)
-                    positif_cases = len(collected_data[collected_data['prediction'] == 0])
-                    negatif_cases = len(collected_data[collected_data['prediction'] == 1])
 
-                    stats_table = pd.DataFrame({
-                        "Keterangan": ["Total Data", "Jumlah Kasus Positif", "Jumlah Kasus Negatif"],
-                        "Jumlah": [total_data, positif_cases, negatif_cases]
-                    })
+##? dibawah ini fitur lama tentang data inputan bisa tersave dan di download sebagai csv
 
-                    st.table(stats_table)
-                else:
-                    st.info("Belum ada data yang terkumpul")
+        #         if save_to_csv(input_dict, liver_prediction[0]):
+        #             st.info("Data telah disimpan 🐥 terimakasih telah menggunakan layanan ini")
+        #         else:
+        #             st.error("Gagal menyimpan data")
+
+        #     # Display collected data section
+        # if st.checkbox("Tampilkan Data yang Terkumpul"):
+        #         if os.path.exists('new_patient_data.csv'):
+        #             collected_data = pd.read_csv('new_patient_data.csv')
+        #             st.write("### Data yang Telah Terkumpul")
+        #             st.dataframe(collected_data)
+        #             st.write("### Rekapitulasi Data")
+        #             total_data = len(collected_data)
+        #             positif_cases = len(collected_data[collected_data['prediction'] == 0])
+        #             negatif_cases = len(collected_data[collected_data['prediction'] == 1])
+
+        #             stats_table = pd.DataFrame({
+        #                 "Keterangan": ["Total Data", "Jumlah Kasus Positif", "Jumlah Kasus Negatif"],
+        #                 "Jumlah": [total_data, positif_cases, negatif_cases]
+        #             })
+
+        #             st.table(stats_table)
+        #         else:
+        #             st.info("Belum ada data yang terkumpul")
+##? Ini batas akhir fitur koleksi data input dan show data input
 
 if __name__ == "__main__":
     liver_prediction_system()
