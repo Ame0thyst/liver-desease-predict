@@ -46,23 +46,23 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
         </section>
 ''', unsafe_allow_html=True)
     
-col1, col2 = st.columns(2)
+    col1, col2 = st.columns(2)
 
-with col1 :
-    st.write("""
-    - Kelelahan
-    - Mual dan muntah
-    - Nyeri perut
-    - Urin berwarna gelap
-    """)
+    with col1 :
+            st.write("""
+            - Kelelahan
+            - Mual dan muntah
+            - Nyeri perut
+            - Urin berwarna gelap
+            """)
 
-with col2:
-    st.write("""
-    - Feses berwarna pucat
-    - Kulit dan mata kuning (jaundice)
-    - Demam
-    - Nyeri sendi
-    """)
+    with col2:
+            st.write("""
+            - Feses berwarna pucat
+            - Kulit dan mata kuning (jaundice)
+            - Demam
+            - Nyeri sendi
+            """)
 
     # st.image(image4)
 
