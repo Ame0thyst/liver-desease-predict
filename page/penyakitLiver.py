@@ -64,7 +64,14 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
             - Demam
             - Nyeri sendi
             """)
-
+    
+    st.markdown('''
+    <section>
+        <h3>Apa saja sih gejala penyakit hepatitis? </h3>
+        <p style='text-align: justify;'>Gejala hepatitis dapat bervariasi, namun yang paling umum menurut <a href="    https://www.unicef.org/indonesia/id/hepatitis-akut-berat-yang-belum-diketahui-penyebabnya-di-kalangan-anak-anak?gad_source=1&gclid=CjwKCAiAjp-7BhBZEiwAmh9rBUo7vt5nfnPoRCuKl1rEOCs8Quoath-ON7swfsTC0vCrlwnwitBuyxoCZxwQAvD_BwE
+"> UNICEF  </a> meliputi:</p>
+        </section>
+''', unsafe_allow_html=True)
     st.markdown('''
 <section>
     <h3>Pencegahan Penyakit Hepatitis</h3>
