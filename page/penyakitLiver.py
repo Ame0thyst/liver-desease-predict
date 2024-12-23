@@ -73,43 +73,43 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
         </section>
 ''', unsafe_allow_html=True)
     st.markdown('''
-    <section>
-        <h3>Pencegahan Penyakit Hepatitis</h3>
-        
-        <h3>1. Vaksinasi</h3>
-        <p>
-            <span>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</span>
-            <span>Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.</span>
-        </p>
+        <section>
+            <h3>Pencegahan Penyakit Hepatitis</h3>
+            
+            <h3>1. Vaksinasi</h3>
+            <p>
+                <span>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</span>
+                <span>Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.</span>
+            </p>
 
-        <h3>2. Praktik Higiene yang Baik</h3>
-        <p>
-            <span>Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.</span>
-            <span>Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.</span>
-        </p>
+            <h3>2. Praktik Higiene yang Baik</h3>
+            <p>
+                <span>Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.</span>
+                <span>Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.</span>
+            </p>
 
-        <h3>3. Hindari Kontak dengan Darah dan Cairan Tubuh</h3>
-        <p>
-            <span>Gunakan sarung tangan saat memberikan pertolongan pertama atau membersihkan darah.</span>
-            <span>Jangan berbagi sikat gigi, alat cukur, atau barang pribadi lainnya yang mungkin terkontaminasi darah.</span>
-        </p>
+            <h3>3. Hindari Kontak dengan Darah dan Cairan Tubuh</h3>
+            <p>
+                <span>Gunakan sarung tangan saat memberikan pertolongan pertama atau membersihkan darah.</span>
+                <span>Jangan berbagi sikat gigi, alat cukur, atau barang pribadi lainnya yang mungkin terkontaminasi darah.</span>
+            </p>
 
-        <h3>4. Praktik Seks yang Aman</h3>
-        <p>
-            <span>Gunakan kondom secara konsisten dan benar saat berhubungan seks.</span>
-            <span>Batasi jumlah pasangan seksual dan hindari berhubungan seks dengan orang yang terinfeksi hepatitis B atau C.</span>
-        </p>
+            <h3>4. Praktik Seks yang Aman</h3>
+            <p>
+                <span>Gunakan kondom secara konsisten dan benar saat berhubungan seks.</span>
+                <span>Batasi jumlah pasangan seksual dan hindari berhubungan seks dengan orang yang terinfeksi hepatitis B atau C.</span>
+            </p>
 
-        <h3>5. Hindari Penggunaan Narkoba Suntik</h3>
-        <p>
-            <span>Jangan pernah berbagi jarum suntik, alat suntik, atau peralatan lainnya yang digunakan untuk menyuntikkan narkoba.</span>
-        </p>
+            <h3>5. Hindari Penggunaan Narkoba Suntik</h3>
+            <p>
+                <span>Jangan pernah berbagi jarum suntik, alat suntik, atau peralatan lainnya yang digunakan untuk menyuntikkan narkoba.</span>
+            </p>
 
-        <h3>6. Skrining dan Pengujian</h3>
-        <p>
-            <span>Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.</span>
-            <span>Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.</span>
-        </p>
+            <h3>6. Skrining dan Pengujian</h3>
+            <p>
+                <span>Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.</span>
+                <span>Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.</span>
+            </p>
             </section>
 ''', unsafe_allow_html=True)
 
