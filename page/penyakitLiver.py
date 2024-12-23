@@ -65,49 +65,46 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
             - Nyeri sendi
             """)
 
-    st.header("Pencegahan Penyakit Hepatitis")
+    st.markdown('''
+    <section>
+        <h3>Pencegahan Penyakit Hepatitis</h3>
+        
+        <h3>1. Vaksinasi</h3>
+        <ul>
+            <li>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</li>
+            <li>Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.</li>
+        </ul>
 
-    st.header("1. Vaksinasi")
-    st.markdown("""
-    - Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.
-    - Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.
-    """)
+        <h3>2. Praktik Higiene yang Baik</h3>
+        <ul>
+            <li>Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.</li>
+            <li>Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.</li>
+        </ul>
 
-    st.header("2. Praktik Higiene yang Baik")
-    st.markdown("""
-    - Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.
-    - Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.
-    """)
+        <h3>3. Hindari Kontak dengan Darah dan Cairan Tubuh</h3>
+        <ul>
+            <li>Gunakan sarung tangan saat memberikan pertolongan pertama atau membersihkan darah.</li>
+            <li>Jangan berbagi sikat gigi, alat cukur, atau barang pribadi lainnya yang mungkin terkontaminasi darah.</li>
+        </ul>
 
-    st.header("3. Hindari Kontak dengan Darah dan Cairan Tubuh")
-    st.markdown("""
-    - Gunakan sarung tangan saat memberikan pertolongan pertama atau membersihkan darah.
-    - Jangan berbagi sikat gigi, alat cukur, atau barang pribadi lainnya yang mungkin terkontaminasi darah.
-    """)
+        <h3>4. Praktik Seks yang Aman</h3>
+        <ul>
+            <li>Gunakan kondom secara konsisten dan benar saat berhubungan seks.</li>
+            <li>Batasi jumlah pasangan seksual dan hindari berhubungan seks dengan orang yang terinfeksi hepatitis B atau C.</li>
+        </ul>
 
-    st.header("4. Praktik Seks yang Aman")
-    st.markdown("""
-    - Gunakan kondom secara konsisten dan benar saat berhubungan seks.
-    - Batasi jumlah pasangan seksual dan hindari berhubungan seks dengan orang yang terinfeksi hepatitis B atau C.
-    """)
+        <h3>5. Hindari Penggunaan Narkoba Suntik</h3>
+        <ul>
+            <li>Jangan pernah berbagi jarum suntik, alat suntik, atau peralatan lainnya yang digunakan untuk menyuntikkan narkoba.</li>
+        </ul>
 
-    st.header("5. Hindari Penggunaan Narkoba Suntik")
-    st.markdown("""
-    - Jangan pernah berbagi jarum suntik, alat suntik, atau peralatan lainnya yang digunakan untuk menyuntikkan narkoba.
-    """)
-
-    st.header("6. Skrining dan Pengujian")
-    st.markdown("""
-    - Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.
-    - Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.
-    """)
-
-    st.markdown("""
-    Sumber:
-    1. Centers for Disease Control and Prevention. (2020). Hepatitis A VIS. https://www.cdc.gov/vaccines/hcp/vis/vis-statements/hep-a.html
-    2. World Health Organization. (2022). Hepatitis. https://www.who.int/health-topics/hepatitis
-    3. Mayo Clinic. (2021). Hepatitis B. https://www.mayoclinic.org/diseases-conditions/hepatitis-b/diagnosis-treatment/drc-20366821
-    """)
+        <h3>6. Skrining dan Pengujian</h3>
+        <ul>
+            <li>Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.</li>
+            <li>Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.</li>
+        </ul>
+    </section>
+    ''', unsafe_allow_html=True)
 
 
             # st.markdown('''
