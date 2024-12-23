@@ -22,12 +22,12 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
    
 
     st.markdown('''
-     <p style="text-align: justify;">lorem dlu aja ya</p>
+     <p style="text-align: justify;">Berdasarkan data dari World Health Organization (WHO), diperkirakan 325 juta orang di seluruh dunia hidup dengan infeksi hepatitis B atau C kronis. Indonesia termasuk dalam negara dengan prevalensi hepatitis B yang tinggi, yaitu lebih dari 8% populasi terinfeksi. Hal ini menunjukkan pentingnya meningkatkan kesadaran masyarakat tentang penyakit ini dan upaya pencegahannya</p>
     ''', unsafe_allow_html=True)
 
     st.markdown('''
-   <h2>Definisi Kasus</h2>
-        <p style="text-align: justify;">lorem dlu
+   <h2>Kasus Liver Dunia</h2>
+        <p style="text-align: justify;">Dibawah ini merupakan data yang dirilis oleh <a href="www"> CDA Foundation</a> yang merupakan perusahan non-profit dan bergerak dalam pemantauan kasus terkait penyakit menular diseluruh dunia.
         </p>
         <p  style="text-align: justify;"><span style="font-weight: bold;">lorem. </span>lorem
             .</p>
