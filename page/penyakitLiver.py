@@ -45,9 +45,10 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
         <p style='text-align: justify;'Gejala hepatitis dapat bervariasi, namun yang paling umum meliputi:</p>
         </section>
 ''', unsafe_allow_html=True)
-    col1, col2 = st.columns(2)
+    
+col1, col2 = st.columns(2)
 
-with col1:
+with col1 :
     st.write("""
     - Kelelahan
     - Mual dan muntah
