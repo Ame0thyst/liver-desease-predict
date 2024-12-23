@@ -13,7 +13,7 @@ from geopy.geocoders import Nominatim
 import xgboost as xgb
 import json
 from math import radians, sin, cos, sqrt, atan2
-
+##! ayanggg aku skripsian dlu ya :D
 ##TODO:  AKTIFKAN DEFINISI DIBAWAH INI JIKA INGIN MENAMPILKAN FITUR TO CSV
 
 # def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
@@ -237,8 +237,8 @@ def liver_prediction_system():
         # Sisa kode UI dan logika prediksi (semua kode yang ada di show_prediksi_liver)
         col1, col2 = st.columns(2)
         with col1:
-                age_of_the_patient = st.number_input("Age of the Patient", min_value=1, max_value=500, value=30)
-                gender_of_the_patient = st.selectbox("Gender of the Patient", ["Male", "Female"])
+                age_of_the_patient = st.number_input("Umur", min_value=1, max_value=500, value=30)
+                gender_of_the_patient = st.selectbox("Jenis Kelamin", ["Male", "Female"])
                 total_bilirubin = st.number_input("Total Bilirubin", min_value=0.0, max_value=500.0, value=1.0)
                 direct_bilirubin = st.number_input("Direct Bilirubin", min_value=0.0, max_value=500.0, value=0.1)
                 alkphos_alkaline_phosphotase = st.number_input("Alkphos Alkaline Phosphotase", min_value=0, max_value=2000, value=100)

@@ -17,7 +17,7 @@ with open(logo_path, "rb") as logo_file:
 # Membuat Sidebar Menu
 with st.sidebar:
     selected = option_menu(
-        menu_title="Main Menu",  # Judul menu
+        menu_title="Menu",  # Judul menu
         options=["About Me", "Informasi Liver", "Prediksi Penyakit Liver"],  # Pilihan menu
         icons=["person", "info-circle", "activity"],  # Ikon (opsional)
         menu_icon="cast",  # Ikon untuk menu utama (opsional)
