@@ -237,7 +237,7 @@ def liver_prediction_system():
         # Sisa kode UI dan logika prediksi (semua kode yang ada di show_prediksi_liver)
         col1, col2 = st.columns(2)
         with col1:
-                age_of_the_patient = st.number_input("Umur", min_value=1, max_value=500, value=30)
+                age_of_the_patient = st.number_input("Umur Pasien", min_value=1, max_value=500, value=30)
                 gender_of_the_patient = st.selectbox("Jenis Kelamin", ["Male", "Female"])
                 total_bilirubin = st.number_input("Total Bilirubin", min_value=0.0, max_value=500.0, value=1.0)
                 direct_bilirubin = st.number_input("Direct Bilirubin", min_value=0.0, max_value=500.0, value=0.1)
