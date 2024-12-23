@@ -32,10 +32,9 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
         <p  style="text-align: justify;"><span style="font-weight: bold;">lorem. </span>lorem
             .</p>
     ''', unsafe_allow_html=True)
-    st.image(image)
-    st.image(image2)
-    st.image(image3)
-
+        st.image(image, caption="Gambar 1: Hepatitis C")
+        st.image(image2, caption="Gambar 2: Hepatitis B Dewasa")
+        st.image(image3, caption="Gambar 3: Hepatitis B Balita")
     # st.markdown('''
     #     <p><span style=" font-weight: bold;">lorem </span>lorem</p>
     # ''', unsafe_allow_html=True)
