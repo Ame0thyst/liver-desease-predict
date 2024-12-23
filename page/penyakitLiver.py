@@ -110,7 +110,7 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
             <span>Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.</span>
             <span>Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.</span>
         </p>
-    </section>
+            </section>
 ''', unsafe_allow_html=True)
 
 
