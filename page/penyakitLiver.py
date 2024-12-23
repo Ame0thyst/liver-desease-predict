@@ -66,45 +66,45 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
             """)
 
     st.markdown('''
-    <section>
-        <h3>Pencegahan Penyakit Hepatitis</h3>
-        
-        <h3>1. Vaksinasi</h3>
-        <ul>
-            <li>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</li>
-            <li>Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.</li>
-        </ul>
+<section>
+    <h3>Pencegahan Penyakit Hepatitis</h3>
+    
+    <h3>1. Vaksinasi</h3>
+    <ul>
+        <li>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</li>
+        <li>Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.</li>
+    </ul>
 
-        <h3>2. Praktik Higiene yang Baik</h3>
-        <ul>
-            <li>Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.</li>
-            <li>Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.</li>
-        </ul>
+    <h3>2. Praktik Higiene yang Baik</h3>
+    <ul>
+        <li>Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.</li>
+        <li>Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.</li>
+    </ul>
 
-        <h3>3. Hindari Kontak dengan Darah dan Cairan Tubuh</h3>
-        <ul>
-            <li>Gunakan sarung tangan saat memberikan pertolongan pertama atau membersihkan darah.</li>
-            <li>Jangan berbagi sikat gigi, alat cukur, atau barang pribadi lainnya yang mungkin terkontaminasi darah.</li>
-        </ul>
+    <h3>3. Hindari Kontak dengan Darah dan Cairan Tubuh</h3>
+    <ul>
+        <li>Gunakan sarung tangan saat memberikan pertolongan pertama atau membersihkan darah.</li>
+        <li>Jangan berbagi sikat gigi, alat cukur, atau barang pribadi lainnya yang mungkin terkontaminasi darah.</li>
+    </ul>
 
-        <h3>4. Praktik Seks yang Aman</h3>
-        <ul>
-            <li>Gunakan kondom secara konsisten dan benar saat berhubungan seks.</li>
-            <li>Batasi jumlah pasangan seksual dan hindari berhubungan seks dengan orang yang terinfeksi hepatitis B atau C.</li>
-        </ul>
+    <h3>4. Praktik Seks yang Aman</h3>
+    <ul>
+        <li>Gunakan kondom secara konsisten dan benar saat berhubungan seks.</li>
+        <li>Batasi jumlah pasangan seksual dan hindari berhubungan seks dengan orang yang terinfeksi hepatitis B atau C.</li>
+    </ul>
 
-        <h3>5. Hindari Penggunaan Narkoba Suntik</h3>
-        <ul>
-            <li>Jangan pernah berbagi jarum suntik, alat suntik, atau peralatan lainnya yang digunakan untuk menyuntikkan narkoba.</li>
-        </ul>
+    <h3>5. Hindari Penggunaan Narkoba Suntik</h3>
+    <ul>
+        <li>Jangan pernah berbagi jarum suntik, alat suntik, atau peralatan lainnya yang digunakan untuk menyuntikkan narkoba.</li>
+    </ul>
 
-        <h3>6. Skrining dan Pengujian</h3>
-        <ul>
-            <li>Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.</li>
-            <li>Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.</li>
-        </ul>
-    </section>
-    ''', unsafe_allow_html=True)
+    <h3>6. Skrining dan Pengujian</h3>
+    <ul>
+        <li>Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.</li>
+        <li>Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.</li>
+    </ul>
+</section>
+''', unsafe_allow_html=True)
 
 
             # st.markdown('''
