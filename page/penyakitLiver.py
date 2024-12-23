@@ -46,6 +46,7 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
 "> UNICEF  </a> meliputi:</p>
         </section>
 ''', unsafe_allow_html=True)
+    
     col1, col2 = st.columns(2)
 
     with col1 :
@@ -64,105 +65,93 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
             - Nyeri sendi
             """)
 
-    # st.image(image4)
+            import streamlit as st
 
-    # st.markdown('''
-    #      <p style="text-align: justify;"><span style="font-weight: bold;"> lorem </span> lorem</p>
-    #     <p style="text-align: justify;">lorem:</p>
-    #     <ol style="text-align: justify;">
-    #         <li>Plorem</li>
-            
-    #     </ol>
-    #     <p style="text-align: justify;">lorem</p>
-    # ''', unsafe_allow_html=True)
-    # st.image(image5)
+# Judul
+    st.header("Cara Pencegahan Penyakit Hepatitis")
 
-    # st.markdown('''
-    #      <h2>Kasus Diabetes Melitus di Indonesia</h2>
-    #     <p style="text-align: justify;">
-    #        lorem
-    #     </p>
-    #     <p style="text-align: justify;">
-    #        lorem
-    # ''', unsafe_allow_html=True)
+    # Konten menggunakan markdown dengan HTML untuk styling
+    st.markdown('''
+    <section>
+        <p style='text-align: justify;'>
+            Beberapa cara pencegahan penyakit hepatitis meliputi:
+        </p>
+        
+        <ol>
+            <li>
+                <strong>Vaksinasi</strong>
+                <ul>
+                    <li>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</li>
+                    <li>Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Praktik Higiene yang Baik</strong>
+                <ul>
+                    <li>Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.</li>
+                    <li>Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Hindari Kontak dengan Darah dan Cairan Tubuh</strong>
+                <ul>
+                    <li>Gunakan sarung tangan saat memberikan pertolongan pertama atau membersihkan darah.</li>
+                    <li>Jangan berbagi sikat gigi, alat cukur, atau barang pribadi lainnya yang mungkin terkontaminasi darah.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Praktik Seks yang Aman</strong>
+                <ul>
+                    <li>Gunakan kondom secara konsisten dan benar saat berhubungan seks.</li>
+                    <li>Batasi jumlah pasangan seksual dan hindari berhubungan seks dengan orang yang terinfeksi hepatitis B atau C.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Hindari Penggunaan Narkoba Suntik</strong>
+                <ul>
+                    <li>Jangan pernah berbagi jarum suntik, alat suntik, atau peralatan lainnya yang digunakan untuk menyuntikkan narkoba.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Skrining dan Pengujian</strong>
+                <ul>
+                    <li>Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.</li>
+                    <li>Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.</li>
+                </ul>
+            </li>
+        </ol>
 
-    # st.image(image6)
-    # st.markdown('''
-    #     <p style="text-align: justify;">
-    #         lorem
-    #     </p>
-    #     <p style="text-align: justify;">
-    #         lorem
-    #     </p>
-    # ''', unsafe_allow_html=True)
-    # st.image(image7)
-    # st.markdown('''
-    #       <h2>Faktor Risiko Diabetes Melitus</h2>
-    #     <p style="text-align: justify;">
-    #         Slorem
-    #     </p>
-    #     <p style="text-align: justify;">
-    #         lorem</p>
-    # ''', unsafe_allow_html=True)
-    # st.image(image8)
-    # st.markdown('''
-    #       <p style="text-align: justify;">
-    #                 lorem
-    #             </p>
-    # ''', unsafe_allow_html=True)
-    # st.image(image9)
-    # st.markdown('''
-    #      <p style="text-align: justify;">
-    #                 lorem
-    #             </p>
-    # ''', unsafe_allow_html=True)
-    # st.image(image10)
-    # st.markdown('''
-    #     <p style="text-align: justify;">
-    #                 lorem
-    # ''', unsafe_allow_html=True)
-    # st.image(image11)
-    # st.markdown('''
-    #     <p style="text-align: justify;">
-    #                lorem
-    #             </p>
-    # ''', unsafe_allow_html=True)
+        <p style='text-align: justify;'>
+            Dengan menerapkan langkah-langkah pencegahan ini, risiko tertular hepatitis dapat dikurangi secara signifikan.
+        </p>
+    </section>
+    ''', unsafe_allow_html=True)
 
-    # st.markdown('''
-    #      <h2>Upaya Pencegahan dan Pengendalian Diaebetes Melitus</h2>
-    #     <p style="text-align: justify;">
-    #         lorem
-    #     </p>
-    #     <p style="text-align: justify;">
-    #         lorem
-    #     </p>
-    #     <p style="text-align: justify;">
-    #        lorem
-    #     </p>
-    # ''', unsafe_allow_html=True)
-    # st.image(image12)
-    # st.markdown('''
-    #      <p style="text-align: justify;">
-    #        lorem
-    #     </p>
-    #     <p style="text-align: justify;">
-    #         lorem
-    #     </p>
-    #     <p style="text-align: justify;">
-    #        lorem
-    #     </p>
-    #     <p style="text-align: justify;">
-    #         Blorem
-    #     </p>
-    # ''', unsafe_allow_html=True)
-    # st.image(image13)
-    # st.markdown('''
-    #      <p style="text-align: justify;">
-    #         lorem</p>
-          
-           
-    # ''', unsafe_allow_html=True)
-   
+
+            # st.markdown('''
+            #     <section>
+            #         <h3>Bagaimana cara menjegah penyakit hepatitis? </h3>
+            #         <p style='text-align: justify;'>Gejala hepatitis dapat bervariasi, namun yang paling umum menurut <a href="    https://www.unicef.org/indonesia/id/hepatitis-akut-berat-yang-belum-diketahui-penyebabnya-di-kalangan-anak-anak?gad_source=1&gclid=CjwKCAiAjp-7BhBZEiwAmh9rBUo7vt5nfnPoRCuKl1rEOCs8Quoath-ON7swfsTC0vCrlwnwitBuyxoCZxwQAvD_BwE
+            # "> UNICEF  </a> meliputi:</p>
+            #         </section>
+            # ''', unsafe_allow_html=True)
+            # col3,col4 = st.columns(2)
+            # with col3 :
+            #                         st.write("""
+            #                         - Kelelahan
+            #                         - Mual dan muntah
+            #                         - Nyeri perut
+            #                         - Urin berwarna gelap
+            #                         """)
+
+            # with col4:
+            #                         st.write("""
+            #                         - Feses berwarna pucat
+            #                         - Kulit dan mata kuning (jaundice)
+            #                         - Demam
+            #                         - Nyeri sendi
+            #                         """)
+
 
 
 if __name__ == "__main__":
