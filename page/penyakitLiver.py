@@ -71,7 +71,8 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
         <h4>1. Vaksinasi </h4>
         <p style='text-align: justify;'>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</p>
         <p style='text-align: justify;'>Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.</p>
-                
+        </section>
+    <section>           
         <h4>2. Praktik Higiene yang Baik </h4>
         <p style='text-align: justify;'>Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.</p>
         <p style='text-align: justify;'>Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.</p>
