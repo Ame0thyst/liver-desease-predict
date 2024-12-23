@@ -29,15 +29,42 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
    <h2>Kasus Liver Dunia</h2>
         <p style="text-align: justify;">Dibawah ini merupakan data yang dirilis oleh <a href="https://cdafound.org/polaris/global-distribution/"> CDA Foundation</a> yang merupakan perusahan non-profit dan bergerak dalam pemantauan kasus terkait penyakit menular diseluruh dunia.
         </p>
-        <p  style="text-align: justify;"><span style="font-weight: bold;"> </span>
-            .</p>
     ''', unsafe_allow_html=True)
+        # <p  style="text-align: justify;"><span style="font-weight: bold;"> </span>
+        #     </p>
     st.image(image, caption="Gambar 1: Hepatitis C")
     st.image(image2, caption="Gambar 2: Hepatitis B Dewasa")
     st.image(image3, caption="Gambar 3: Hepatitis B Balita")
     st.markdown('''
-        <p>Pada <span style=" font-weight: bold;">Gambar 1 </span>Indonesia menempati posisi ke – 6 sebagai negara dengan penderita penyakit liver Hepatitis C terbanyak di dunia dengan total lebih dari satu juta kasus pada tahun 2022. Keadaan yang lebih buruk dapat terlihat pada <span style=" font-weight: bold;">Gambar 2 dan Gambar 3 </span>dimana menunjukkan bahwa total infeksi penyakit liver Hepatitis B ( dewasa ) berjumlah lebih dari 15 juta kasus yang membuat Indonesia menempati peringkat ke -3 sebagai negara dengan kasus Hepatitis B ( dewasa ) terbanyak di dunia pada tahun 2022, dan menempati peringkat ke- 2 sebagai negara dengan penderita Hepatitis B ( Balita ) dengan total lebih dari 600 ribu kasus pada tahun 2022.</p> 
+        <p style="text-align: justify;">Pada <span style=" font-weight: bold;">Gambar 1 </span>Indonesia menempati posisi ke – 6 sebagai negara dengan penderita penyakit liver Hepatitis C terbanyak di dunia dengan total lebih dari satu juta kasus pada tahun 2022. Keadaan yang lebih buruk dapat terlihat pada <span style=" font-weight: bold;">Gambar 2 dan Gambar 3 </span>dimana menunjukkan bahwa total infeksi penyakit liver Hepatitis B ( dewasa ) berjumlah lebih dari 15 juta kasus yang membuat Indonesia menempati peringkat ke -3 sebagai negara dengan kasus Hepatitis B ( dewasa ) terbanyak di dunia pada tahun 2022, dan menempati peringkat ke- 2 sebagai negara dengan penderita Hepatitis B ( Balita ) dengan total lebih dari 600 ribu kasus pada tahun 2022.</p> 
     ''', unsafe_allow_html=True)
+
+    st.markdown('''
+<section>
+    <h3>Apa saja sih gejala penyakit hepatitis? </h3>
+    <p style='text-align: justify;'>Gejala hepatitis dapat bervariasi, namun yang paling umum meliputi:</p>
+    
+    <div style="display: flex; justify-content: space-between;">
+        <div style="width: 48%;">
+            <ul>
+                <li>Kelelahan</li>
+                <li>Mual dan muntah</li>
+                <li>Nyeri perut</li>
+                <li>Urin berwarna gelap</li>
+            </ul>
+        </div>
+        <div style="width: 48%;">
+            <ul>
+                <li>Feses berwarna pucat</li>
+                <li>Kulit dan mata kuning (jaundice)</li>
+                <li>Demam</li>
+                <li>Nyeri sendi</li>
+            </ul>
+        </div>
+    </div>
+</section>
+''', unsafe_allow_html=True)
+
 
     # st.image(image4)
 
