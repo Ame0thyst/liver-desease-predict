@@ -27,7 +27,7 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
 
     st.markdown('''
    <h2>Kasus Liver Dunia</h2>
-        <p style="text-align: justify;">Dibawah ini merupakan data yang dirilis oleh <a href="www"> CDA Foundation</a> yang merupakan perusahan non-profit dan bergerak dalam pemantauan kasus terkait penyakit menular diseluruh dunia.
+        <p style="text-align: justify;">Dibawah ini merupakan data yang dirilis oleh <a href="https://cdafound.org/polaris/global-distribution/"> CDA Foundation</a> yang merupakan perusahan non-profit dan bergerak dalam pemantauan kasus terkait penyakit menular diseluruh dunia.
         </p>
         <p  style="text-align: justify;"><span style="font-weight: bold;">lorem. </span>lorem
             .</p>
