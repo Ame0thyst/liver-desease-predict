@@ -67,9 +67,9 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
     
     st.markdown('''
     <section>
-        <h3>Apa saja sih gejala penyakit hepatitis? </h3>
-        <p style='text-align: justify;'>Gejala hepatitis dapat bervariasi, namun yang paling umum menurut <a href="    https://www.unicef.org/indonesia/id/hepatitis-akut-berat-yang-belum-diketahui-penyebabnya-di-kalangan-anak-anak?gad_source=1&gclid=CjwKCAiAjp-7BhBZEiwAmh9rBUo7vt5nfnPoRCuKl1rEOCs8Quoath-ON7swfsTC0vCrlwnwitBuyxoCZxwQAvD_BwE
-"> UNICEF  </a> meliputi:</p>
+        <h3>Pencegahan Penyakit Hepatitis </h3>
+        <h3>1. Vaksinasi </h3>
+        <p style='text-align: justify;'>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</p>
         </section>
 ''', unsafe_allow_html=True)
     st.markdown('''
@@ -78,37 +78,37 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
     
     <h3>1. Vaksinasi</h3>
     <p>
-        <li>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</li>
-        <li>Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.</li>
+        <span>Vaksin hepatitis A dan B tersedia dan sangat efektif dalam mencegah infeksi.</span>
+        <span>Vaksinasi direkomendasikan untuk semua bayi, anak-anak, dan orang dewasa yang berisiko tinggi.</span>
     </p>
 
     <h3>2. Praktik Higiene yang Baik</h3>
     <p>
-        <li>Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.</li>
-        <li>Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.</li>
+        <span>Cuci tangan dengan sabun dan air bersih secara teratur, terutama sebelum makan atau menyiapkan makanan.</span>
+        <span>Hindari makan makanan atau minum air yang mungkin terkontaminasi, terutama saat bepergian ke daerah dengan sanitasi yang buruk.</span>
     </p>
 
     <h3>3. Hindari Kontak dengan Darah dan Cairan Tubuh</h3>
     <p>
-        <li>Gunakan sarung tangan saat memberikan pertolongan pertama atau membersihkan darah.</li>
-        <li>Jangan berbagi sikat gigi, alat cukur, atau barang pribadi lainnya yang mungkin terkontaminasi darah.</li>
+        <span>Gunakan sarung tangan saat memberikan pertolongan pertama atau membersihkan darah.</span>
+        <span>Jangan berbagi sikat gigi, alat cukur, atau barang pribadi lainnya yang mungkin terkontaminasi darah.</span>
     </p>
 
     <h3>4. Praktik Seks yang Aman</h3>
     <p>
-        <li>Gunakan kondom secara konsisten dan benar saat berhubungan seks.</li>
-        <li>Batasi jumlah pasangan seksual dan hindari berhubungan seks dengan orang yang terinfeksi hepatitis B atau C.</li>
+        <span>Gunakan kondom secara konsisten dan benar saat berhubungan seks.</span>
+        <span>Batasi jumlah pasangan seksual dan hindari berhubungan seks dengan orang yang terinfeksi hepatitis B atau C.</span>
     </p>
 
     <h3>5. Hindari Penggunaan Narkoba Suntik</h3>
     <p>
-        <li>Jangan pernah berbagi jarum suntik, alat suntik, atau peralatan lainnya yang digunakan untuk menyuntikkan narkoba.</li>
+        <span>Jangan pernah berbagi jarum suntik, alat suntik, atau peralatan lainnya yang digunakan untuk menyuntikkan narkoba.</span>
     </p>
 
     <h3>6. Skrining dan Pengujian</h3>
     <p>
-        <li>Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.</li>
-        <li>Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.</li>
+        <span>Lakukan skrining hepatitis B dan C jika Anda berisiko tinggi, seperti memiliki riwayat transfusi darah, tato, atau tindik.</span>
+        <span>Ibu hamil harus menjalani skrining hepatitis B untuk mencegah penularan ke bayi mereka saat lahir.</span>
     </p>
 </section>
 ''', unsafe_allow_html=True)
