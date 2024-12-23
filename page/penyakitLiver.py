@@ -29,15 +29,15 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
    <h2>Kasus Liver Dunia</h2>
         <p style="text-align: justify;">Dibawah ini merupakan data yang dirilis oleh <a href="https://cdafound.org/polaris/global-distribution/"> CDA Foundation</a> yang merupakan perusahan non-profit dan bergerak dalam pemantauan kasus terkait penyakit menular diseluruh dunia.
         </p>
-        <p  style="text-align: justify;"><span style="font-weight: bold;">lorem. </span>lorem
+        <p  style="text-align: justify;"><span style="font-weight: bold;"> </span>
             .</p>
     ''', unsafe_allow_html=True)
     st.image(image, caption="Gambar 1: Hepatitis C")
     st.image(image2, caption="Gambar 2: Hepatitis B Dewasa")
     st.image(image3, caption="Gambar 3: Hepatitis B Balita")
-    # st.markdown('''
-    #     <p><span style=" font-weight: bold;">lorem </span>lorem</p>
-    # ''', unsafe_allow_html=True)
+    st.markdown('''
+        <p>Pada <span style=" font-weight: bold;">Gambar 1 </span>Indonesia menempati posisi ke – 6 sebagai negara dengan penderita penyakit liver Hepatitis C terbanyak di dunia dengan total lebih dari satu juta kasus pada tahun 2022. Keadaan yang lebih buruk dapat terlihat pada <span style=" font-weight: bold;">Gambar 2 dan Gambar 3 </span>dimana menunjukkan bahwa total infeksi penyakit liver Hepatitis B ( dewasa ) berjumlah lebih dari 15 juta kasus yang membuat Indonesia menempati peringkat ke -3 sebagai negara dengan kasus Hepatitis B ( dewasa ) terbanyak di dunia pada tahun 2022, dan menempati peringkat ke- 2 sebagai negara dengan penderita Hepatitis B ( Balita ) dengan total lebih dari 600 ribu kasus pada tahun 2022.</p> 
+    ''', unsafe_allow_html=True)
 
     # st.image(image4)
 
