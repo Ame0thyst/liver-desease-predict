@@ -137,4 +137,5 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
 
 
 if __name__ == "__main__":
-    show_penyakit_diabetes()
+    # show_penyakit_diabetes()
+    show_inform_liver()
