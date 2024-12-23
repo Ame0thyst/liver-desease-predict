@@ -40,31 +40,28 @@ Hepatitis adalah peradangan pada organ hati yang disebabkan oleh infeksi virus, 
     ''', unsafe_allow_html=True)
 
     st.markdown('''
-<section>
-    <h3>Apa saja sih gejala penyakit hepatitis? </h3>
-    <p style='text-align: justify;'>Gejala hepatitis dapat bervariasi, namun yang paling umum meliputi:</p>
-    
-    <div style="display: flex; justify-content: space-between;">
-        <div style="width: 48%;">
-            <ul>
-                <li>Kelelahan</li>
-                <li>Mual dan muntah</li>
-                <li>Nyeri perut</li>
-                <li>Urin berwarna gelap</li>
-            </ul>
-        </div>
-        <div style="width: 48%;">
-            <ul>
-                <li>Feses berwarna pucat</li>
-                <li>Kulit dan mata kuning (jaundice)</li>
-                <li>Demam</li>
-                <li>Nyeri sendi</li>
-            </ul>
-        </div>
-    </div>
-</section>
+    <section>
+        <h3>Apa saja sih gejala penyakit hepatitis? </h3>
+        <p style='text-align: justify;'Gejala hepatitis dapat bervariasi, namun yang paling umum meliputi:</p>
+        </section>
 ''', unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
 
+with col1:
+    st.write("""
+    - Kelelahan
+    - Mual dan muntah
+    - Nyeri perut
+    - Urin berwarna gelap
+    """)
+
+with col2:
+    st.write("""
+    - Feses berwarna pucat
+    - Kulit dan mata kuning (jaundice)
+    - Demam
+    - Nyeri sendi
+    """)
 
     # st.image(image4)
 
